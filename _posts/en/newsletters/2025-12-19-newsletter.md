@@ -161,7 +161,20 @@ excerpt: >
 ## April
 
 {:#swiftsync}
-- **SwiftSync speedup for initial block download:** ...
+- **SwiftSync speedup for initial block download:** Sebastian Falbesoner
+  [posted][swiftsync delving post] to Delving Bitcoin a sample implementation
+  and results of a >5x speedup of _initial block download_ (IBD) through
+  SwiftSync, an idea initially [proposed][swiftsync ruben gh] by Ruben Somsen.
+
+  The speedup is achieved during IBD by only adding coins to the UTXO set when
+  they will still be in the UTXO set at the end of IBD. This knowledge of the
+  final UTXO set state stated is compactly encoded in a minimally trusted
+  pre-generated hints file. In addition to minimizing overhead on chainstate
+  operations, SwiftSync enables further performance improvements by allowing
+  parallel block validation.
+
+  Work on a Rust implementation is [underway][swiftsync rust impl].
+
 
 {:#dahlias}
 - **DahLIAS interactive aggregate signatures:** Jonas Nick, Tim Ruffing, Yannick
@@ -514,3 +527,6 @@ Friday publication schedule on January 2nd.*
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
 [ln fees post]: https://delvingbitcoin.org/t/fee-based-spam-prevention-for-lightning/1524
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
+[swiftsync delving post]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/
+[swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
+[swiftsync rust impl]: https://delvingbitcoin.org/t/swiftsync-speeding-up-ibd-with-pre-generated-hints-poc/1562/18
