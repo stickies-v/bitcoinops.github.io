@@ -144,7 +144,19 @@ excerpt: >
   trusted marketplace.
 
 {:#lnupfrontfees}
-- **LN upfront and hold fees using burnable outputs:** ...
+- **LN upfront and hold fees using burnable outputs:** John Law [posted][ln fees post]
+  to Delving Bitcoin the summary of a [paper][ln fees paper] he has written about a
+  protocol that Lighting nodes can use to charge two additional types of fees for
+  forwarding payments, an upfront fee and a hold fee. The former would be paid by
+  the ultimate spender to compensate forwarding nodes for temporarily using an
+  [HTLC][topic htlc] slot, while the latter would be paid by any node that delays
+  the settlement of an HTLC, with the payment amount scaling up with the length
+  of the delay.
+
+  Law describes the protocol as a solution for
+  [channel jamming attacks][topic channel jamming attacks], a weakness in the Lightning
+  Network protocol that allows an attacker to costlessly prevent other nodes
+  from using some or all of their funds.
 
 ## April
 
@@ -402,3 +414,5 @@ Friday publication schedule on January 2nd.*
 [fork guide ir]: https://ajtowns.github.io/bfg/investor.html
 [template mrkt post]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
+[ln fees post]: https://delvingbitcoin.org/t/fee-based-spam-prevention-for-lightning/1524
+[ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
