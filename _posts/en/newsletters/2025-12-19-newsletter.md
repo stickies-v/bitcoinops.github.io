@@ -322,13 +322,110 @@ FIXME:Gustavojfe
 
 ## Summary 2025: Bitcoin Optech
 
-FIXME:bitschmidty
+In Optech's eighth year, we published 50 weekly [newsletters][] and this
+Year-in-Review special.  Altogether, Optech published over 80,000 English words
+about Bitcoin software research and development this year, the rough equivalent
+of a 225-page book.
 
-Optech was the fortunate and grateful recipient of a $20,000 USD contribution to
+Each newsletter and blog post was translated into Chinese, French, and Japanese,
+with other languages also receiving translations, for a total of over 150
+translations in 2025.
+
+In addition, every newsletter this year was accompanied by a [podcast][]
+episode, totaling over 60 hours in audio form and over 500,000 words in
+transcript form.  Many of Bitcoin's top contributors were guests on the show,
+some of them on more than one episode, with a total of 75 different unique
+guests in 2025:
+
+- 0xB10C
+- Abubakar Sadiq Ismail (x3)
+- Alejandro De La Torre
+- Alex Myers
+- Andrew Toth
+- Anthony Towns
+- Antoine Poinsot (x5)
+- Bastien Teinturier (x3)
+- Bob McElrath
+- Bram Cohen
+- Brandon Black
+- Bruno Garcia
+- Bryan Bishop
+- Carla Kirk-Cohen (x2)
+- Chris Stewart
+- Christian Kümmerle
+- Clara Shikhelman
+- Constantine Doumanidis
+- Dan Gould
+- Daniela Brozzoni (x2)
+- Daniel Roberts
+- Davidson Souza
+- David Gumberg
+- Elias Rohrer
+- Eugene Siegel (x2)
+- Francesco Madonna
+- Gloria Zhao (x2)
+- Gregory Sanders (x2)
+- Hunter Beast
+- Jameson Lopp (x2)
+- Jan B
+- Jeremy Rubin (x2)
+- Jesse Posner
+- Johan Halseth
+- Jonas Nick (x4)
+- Joost Jager (x2)
+- Jose SK
+- Josh Doman (x2)
+- Julian
+- Lauren Shareshian
+- Liam Eagen
+- Marco De Leon
+- Matt Corallo
+- Matt Morehouse (x7)
+- Moonsettler
+- Naiyoma
+- Niklas Gögge
+- Olaoluwa Osuntokun
+- Oleksandr Kurbatov
+- Peter Todd
+- Pieter Wuille
+- PortlandHODL
+- Rene Pickhardt
+- Robin Linus (x3)
+- Rodolfo Novak
+- Ruben Somsen (x2)
+- Russell O’Connor
+- Salvatore Ingala (x4)
+- Sanket Kanjalkar
+- Sebastian Falbesoner (x2)
+- Sergi Delgado
+- Sindura Saraswathi (x2)
+- Sjors Provoost (x2)
+- Steve Myers
+- Steven Roose (x3)
+- Stéphan Vuylsteke (x2)
+- supertestnet
+- Tadge Dryja (x3)
+- TheCharlatan (x2)
+- Tim Ruffing
+- vnprc
+- Vojtěch Strnad
+- Yong Yu
+- Yuval Kogman
+- ZmnSCPxj (x3)
+
+Optech was the fortunate and grateful recipient of another $20,000 USD contribution to
 our work from the [Human Rights Foundation][]. The funds will be used to pay for
 web hosting, email services, podcast transcriptions, and other expenses that
 allow us to continue and improve our delivery of technical content to the
 Bitcoin community.
+
+### A special thank you
+
+After contributing as the primary author for 376 consecutive Bitcoin Optech
+newsletters, Dave Harding stepped back from regular contributing this year. We
+cannot thank Harding enough for anchoring the newsletter for 8 years and all of
+the Bitcoin education, elucidation, and understanding he brought the community.
+We are grateful and wish him well.
 
 </div>
 
@@ -385,6 +482,7 @@ Friday publication schedule on January 2nd.*
 [yirs 2023]: /en/newsletters/2023/12/20/
 [yirs 2024]: /en/newsletters/2024/12/20/
 
+[newsletters]: /en/newsletters/
 [Human Rights Foundation]: https://hrf.org
 [openssl vs libsecp256k1]: /en/newsletters/2025/11/07/#comparing-performance-of-ecdsa-signature-validation-in-openssl-vs-libsecp256k1
 [channel jamming results]: /en/newsletters/2025/10/24/#channel-jamming-mitigation-simulation-results-and-updates
