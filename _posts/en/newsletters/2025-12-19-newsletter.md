@@ -120,7 +120,8 @@ excerpt: >
 ## March
 
 {:#forkingguide}
-- **Bitcoin Forking Guide:** ...
+- **Bitcoin Forking Guide:** Anthony Towns [posted][fork guide post] to
+  Delving Bitcoin a guide on how to build community consensus for changes to Bitcoin’s consensus rules. According to Towns, the process of establishing consensus can be divided in four steps, namely [research and development][fork guide red], [power user exploration][fork guide pue], [industry evaluation][fork guide ie], and [investor review][fork guide ir]. However, Towns warned readers that the guide aims to be only a high-level procedure, and that it could work only in a cooperative environment.
 
 {:#templatemarketplace}
 - **Private block template marketplace to prevent centralizing MEV:** ...
@@ -347,3 +348,8 @@ Friday publication schedule on January 2nd.*
 [eagen paper]: https://eprint.iacr.org/2025/1485
 [dahlias post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/be3813bf-467d-4880-9383-2a0b0223e7e5@gmail.com/
 [dahlias paper]: https://eprint.iacr.org/2025/692.pdf
+[fork guide post]: https://delvingbitcoin.org/t/bitcoin-forking-guide/1451
+[fork guide red]: https://ajtowns.github.io/bfg/research.html
+[fork guide pue]: https://ajtowns.github.io/bfg/power.html
+[fork guide ie]: https://ajtowns.github.io/bfg/industry.html
+[fork guide ir]: https://ajtowns.github.io/bfg/investor.html
