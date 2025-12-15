@@ -18,74 +18,70 @@ excerpt: >
 
 ## Contents
 
-- January
-  - [Updated ChillDKG draft](#chilldkg)
-  - [Offchain DLCs](#offchaindlcs)
-  - [Stats on compact block reconstruction](#compactblockstats)
-- February
-  - [Erlay update](#erlay)
-  - [LN ephemeral anchor scripts](#lneas)
-  - [Probabilistic payments](#probpayments)
-- March
-  - [Bitcoin Forking Guide](#forkingguide)
-  - [Private block template marketplace to prevent centralizing MEV](#templatemarketplace)
-  - [LN upfront and hold fees using burnable outputs](#lnupfrontfees)
-- April
-  - [SwiftSync speedup for initial block download](#swiftsync)
-  - [DahLIAS interactive aggregate signatures](#dahlias)
-- May
-  - [Cluster mempool](#clustermempool)
-  - [Increasing or removing Bitcoin Core’s OP_RETURN size limit](#opreturn)
-- June
-  - [Calculating the selfish mining danger threshold](#selfishmining)
-  - [Fingerprinting nodes using addr messages](#fingerprinting)
-  - [Garbled locks](#garbledlocks)
-- July
-  - [Chain code delegation](#ccdelegation)
-- August
-  - [Utreexo draft BIPs](#utreexo)
-  - [Lowering the minimum relay feerate](#minfeerate)
-  - [Peer block template sharing](#templatesharing)
-  - [Differential fuzzing of Bitcoin and LN implementations](#fuzzing)
-- September
-  - [Details about the design of Simplicity](#simplicity)
-  - [Partitioning and eclipse attacks using BGP interception](#eclipseattacks)
-- October
-  - [Theoretical limitations on embedding data in the UTXO set](#arbdata)
-  - [Channel jamming mitigation simulation results and updates](#channeljamming)
-- November
-  - [Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1](#secpperformance)
-  - [Multiple discussions about restricting data](#restrictingdata)
-  - [Modeling stale rates by propagation delay and mining centralization](#stalerates)
-  - [BIP3 and the BIP process](#bip3)
-- December
-- Featured summaries
-  - [Vulnerabilities](#vulns)
-  - [Quantum](#quantum)
-  - [Soft fork proposals](#softforks)
-  - [Major releases of popular infrastructure projects](#releases)
-  - [Bitcoin Optech](#optech)
+* January
+  * [Updated ChillDKG draft](#chilldkg)
+  * [Offchain DLCs](#offchaindlcs)
+  * [Stats on compact block reconstruction](#compactblockstats)
+* February
+  * [Erlay update](#erlay)
+  * [LN ephemeral anchor scripts](#lneas)
+  * [Probabilistic payments](#probpayments)
+* March
+  * [Bitcoin Forking Guide](#forkingguide)
+  * [Private block template marketplace to prevent centralizing MEV](#templatemarketplace)
+  * [LN upfront and hold fees using burnable outputs](#lnupfrontfees)
+* April
+  * [SwiftSync speedup for initial block download](#swiftsync)
+  * [DahLIAS interactive aggregate signatures](#dahlias)
+* May
+  * [Cluster mempool](#clustermempool)
+  * [Increasing or removing Bitcoin Core’s OP_RETURN size limit](#opreturn)
+* June
+  * [Calculating the selfish mining danger threshold](#selfishmining)
+  * [Fingerprinting nodes using addr messages](#fingerprinting)
+  * [Garbled locks](#garbledlocks)
+* July
+  * [Chain code delegation](#ccdelegation)
+* August
+  * [Utreexo draft BIPs](#utreexo)
+  * [Lowering the minimum relay feerate](#minfeerate)
+  * [Peer block template sharing](#templatesharing)
+  * [Differential fuzzing of Bitcoin and LN implementations](#fuzzing)
+* September
+  * [Details about the design of Simplicity](#simplicity)
+  * [Partitioning and eclipse attacks using BGP interception](#eclipseattacks)
+* October
+  * [Theoretical limitations on embedding data in the UTXO set](#arbdata)
+  * [Channel jamming mitigation simulation results and updates](#channeljamming)
+* November
+  * [Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1](#secpperformance)
+  * [Multiple discussions about restricting data](#restrictingdata)
+  * [Modeling stale rates by propagation delay and mining centralization](#stalerates)
+  * [BIP3 and the BIP process](#bip3)
+* December
+* Featured summaries
+  * [Vulnerabilities](#vulns)
+  * [Quantum](#quantum)
+  * [Soft fork proposals](#softforks)
+  * [Major releases of popular infrastructure projects](#releases)
+  * [Bitcoin Optech](#optech)
 
 ---
 
 ## January
 
 {:#chilldkg}
-
 - **Updated ChillDKG draft:** ...
 
 {:#offchaindlcs}
-
 - **Offchain DLCs:** ...
 
 {:#compactblockstats}
-
 - **Stats on compact block reconstruction:** ...
 
 ## February
 
 {:#erlay}
-
 - **Erlay update:** Sergi Delgado made [several posts][erlay optech posts] over
   the last year about his work and progress implementing [Erlay][erlay] for
   Bitcoin Core. In the first post, he gave an overview on the Erlay proposal and
@@ -102,11 +98,9 @@ excerpt: >
   reconciliation, helped him determine when to use each method.
 
 {:#lneas}
-
 - **LN ephemeral anchor scripts:** ...
 
 {:#probpayments}
-
 - **Probabilistic payments:** ...
 
 <div markdown="1" class="callout" id="vulns">
@@ -120,16 +114,34 @@ excerpt: >
 ## March
 
 {:#forkingguide}
-- **Bitcoin Forking Guide:** Anthony Towns [posted][fork guide post] to
-  Delving Bitcoin a guide on how to build community consensus for changes to Bitcoin’s consensus rules. According to Towns, the process of establishing consensus can be divided in four steps, namely [research and development][fork guide red], [power user exploration][fork guide pue], [industry evaluation][fork guide ie], and [investor review][fork guide ir]. However, Towns warned readers that the guide aims to be only a high-level procedure, and that it could work only in a cooperative environment.
+- **Bitcoin Forking Guide:** Anthony Towns [posted][fork guide post] to Delving
+  Bitcoin a guide on how to build community consensus for changes to Bitcoin’s
+  consensus rules. According to Towns, the process of establishing consensus can
+  be divided in four steps, namely [research and development][fork guide red],
+  [power user exploration][fork guide pue], [industry evaluation][fork guide
+  ie], and [investor review][fork guide ir]. However, Towns warned readers that
+  the guide aims to be only a high-level procedure, and that it could work only
+  in a cooperative environment.
 
 {:#templatemarketplace}
 - **Private block template marketplace to prevent centralizing MEV:** Developers
-  Matt Corallo and 7d5x9 [posted][template mrkt post] to Delving Bitcoin a proposal that would allow to prevent a future in which MEVil — a form of MEV extraction leading to mining centralization — proliferates on Bitcoin. The proposal, referred to as [MEVpool][mevpool gh], would allow parties to bid in public markets for selected space within miner block templates (i.e. "I’ll pay X [BTC] to include transaction Y as long as it comes before any other transaction which interacts with the smart contract identified by Z").
+  Matt Corallo and 7d5x9 [posted][template mrkt post] to Delving Bitcoin a
+  proposal that would allow to prevent a future in which MEVil — a form of MEV
+  extraction leading to mining centralization — proliferates on Bitcoin. The
+  proposal, referred to as [MEVpool][mevpool gh], would allow parties to bid in
+  public markets for selected space within miner block templates (i.e. "I’ll pay
+  X [BTC] to include transaction Y as long as it comes before any other
+  transaction which interacts with the smart contract identified by Z").
 
-  While today services of preferential transaction ordering within block templates are expected to be provided only by large miners, leading to centralization, a trust-reduced public market would allow any miner to work on blinded block templates whose complete transactions aren’t revealed to miners until they’ve produced sufficient proof of work to publish the block.
+  While today services of preferential transaction ordering within block
+  templates are expected to be provided only by large miners, leading to
+  centralization, a trust-reduced public market would allow any miner to work on
+  blinded block templates whose complete transactions aren’t revealed to miners
+  until they’ve produced sufficient proof of work to publish the block.
 
-  The authors warned that this proposal would require multiple marketplaces to compete to help preserve decentralization against the dominance of a single trusted marketplace.
+  The authors warned that this proposal would require multiple marketplaces to
+  compete to help preserve decentralization against the dominance of a single
+  trusted marketplace.
 
 {:#lnupfrontfees}
 - **LN upfront and hold fees using burnable outputs:** ...
@@ -140,8 +152,16 @@ excerpt: >
 - **SwiftSync speedup for initial block download:** ...
 
 {:#dahlias}
-- **DahLIAS interactive aggregate signatures:** Jonas Nick, Tim Ruffing, Yannick Seurin
-  [posted][dahlias post] to the Bitcoin-Dev mailing list to announce a [paper][dahlias paper] they’ve written about DahLIAS, the first interactive 64-byte aggregate signature scheme compatible with the cryptographic primitives already used by Bitcoin, called secp256k1. Aggregate signatures are the cryptographic requirement for [cross-input signature aggregation][topic cisa] (CISA), a feature proposed for Bitcoin that could reduce the size of transactions with multiple inputs, thus reducing the cost of many different types of spending, [coinjoins][topic coinjoin] and [payjoins][topic payjoin] included.
+- **DahLIAS interactive aggregate signatures:** Jonas Nick, Tim Ruffing, Yannick
+  Seurin [posted][dahlias post] to the Bitcoin-Dev mailing list to announce a
+  [paper][dahlias paper] they’ve written about DahLIAS, the first interactive
+  64-byte aggregate signature scheme compatible with the cryptographic
+  primitives already used by Bitcoin, called secp256k1. Aggregate signatures are
+  the cryptographic requirement for [cross-input signature aggregation][topic
+  cisa] (CISA), a feature proposed for Bitcoin that could reduce the size of
+  transactions with multiple inputs, thus reducing the cost of many different
+  types of spending, [coinjoins][topic coinjoin] and [payjoins][topic payjoin]
+  included.
 
 <div markdown="1" class="callout" id="quantum">
 
@@ -163,17 +183,42 @@ excerpt: >
 
 {:#selfishmining}
 - **Calculating the selfish mining danger threshold:** Antoine Poinsot
-  [posted][selfish miner post] to Delving Bitcoin an expansion of the math from the 2013 [paper][selfish miner paper] that gave the [selfish mining attack][topic selfish mining] its name. Poinsot focused on reproducing one of the conclusions of the paper, proving that a dishonest miner controlling 33% of the total network hashrate, with no additional advantages, can become marginally more profitable on a long term basis than the miners controlling 67% of it.
+  [posted][selfish miner post] to Delving Bitcoin an expansion of the math from
+  the 2013 [paper][selfish miner paper] that gave the [selfish mining
+  attack][topic selfish mining] its name. Poinsot focused on reproducing one of
+  the conclusions of the paper, proving that a dishonest miner controlling 33%
+  of the total network hashrate, with no additional advantages, can become
+  marginally more profitable on a long term basis than the miners controlling
+  67% of it.
 
 {:#fingerprinting}
-- **Fingerprinting nodes using addr messages:** Daniela Brozzoni [posted][fingerprinting post]
-  to Delving Bitcoin about research she conducted, together with developer Naiyoma, into identifying the same node on multiple networks using the `addr` messages, which are sent by the nodes, through the P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma were able to fingerprint individual nodes using details from their specific address messages, allowing them to identify the same node running on multiple networks (such as IPv4 and [Tor][topic anonymity networks]). Researchers suggested two possible mitigations, either removing timestamps from address messages or, if the timestamps are kept, randomizing them slightly to make them less specific to particular nodes. 
+- **Fingerprinting nodes using addr messages:** Daniela Brozzoni
+  [posted][fingerprinting post] to Delving Bitcoin about research she conducted,
+  together with developer Naiyoma, into identifying the same node on multiple
+  networks using the `addr` messages, which are sent by the nodes, through the
+  P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma were
+  able to fingerprint individual nodes using details from their specific address
+  messages, allowing them to identify the same node running on multiple networks
+  (such as IPv4 and [Tor][topic anonymity networks]). Researchers suggested two
+  possible mitigations, either removing timestamps from address messages or, if
+  the timestamps are kept, randomizing them slightly to make them less specific
+  to particular nodes.
 
 {:#garbledlocks}
-- **Garbled locks:** Robin Linus [posted][bitvm3 post] to Delving Bitcoin to announce a
-  significant reduction in the amount of onchain space required by [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by Jeremy Rubin, the new approach leverages [Garbled Circuits][garbled circuits wiki], a cryptographic primitive that makes onchain SNARK verification a thousand times more efficient than the BitVM2 implementation, at the cost of requiring a multi-terabyte offchain setup.
+- **Garbled locks:** Robin Linus [posted][bitvm3 post] to Delving Bitcoin to
+  announce a significant reduction in the amount of onchain space required by
+  [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by
+  Jeremy Rubin, the new approach leverages [Garbled Circuits][garbled circuits
+  wiki], a cryptographic primitive that makes onchain SNARK verification a
+  thousand times more efficient than the BitVM2 implementation, at the cost of
+  requiring a multi-terabyte offchain setup.
 
-  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing list about a [paper][eagen paper] he has written about a new mechanism for creating [accountable computing contracts][topic acc] based on Garbled Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's research is independent from Linus'. According to Eagen, Glock allows for a 550x reduction of onchain data compared to BitVM2.
+  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing
+  list about a [paper][eagen paper] he has written about a new mechanism for
+  creating [accountable computing contracts][topic acc] based on Garbled
+  Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's
+  research is independent from Linus'. According to Eagen, Glock allows for a
+  550x reduction of onchain data compared to BitVM2.
 
 <div markdown="1" class="callout" id="softforks">
 
@@ -224,7 +269,6 @@ FIXME:Gustavojfe
 - **Theoretical limitations on embedding data in the UTXO set:** ...
 
 {:#channeljamming}
-
 - **Channel jamming mitigation simulation results and updates:** Carla
   Kirck-Cohen in collaboration with Clara Shikhelman and elnosh had updated the
   [lightning jamming simulation results][channel jamming results], and updates
@@ -239,9 +283,7 @@ FIXME:Gustavojfe
 ## November
 
 {:#secpperformance}
-
-- **Comparing performance of ECDSA signature validation in OpenSSL vs.
-  libsecp256k1:** Sebastian Falbesoner conducted an
+- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:** Sebastian Falbesoner conducted an
   [analysis][openssl vs libsecp256k1] on the performance of ECDSA signature
   validation between OpenSSL and libsecp256k1. Since 2015, Bitcoin Core has used
   libsecp256k1 over OpenSSL. He wanted to be certain that doing so was the right
