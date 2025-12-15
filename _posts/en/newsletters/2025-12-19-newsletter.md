@@ -58,6 +58,7 @@ excerpt: >
   * [Multiple discussions about restricting data](#restrictingdata)
   * [Modeling stale rates by propagation delay and mining centralization](#stalerates)
   * [BIP3 and the BIP process](#bip3)
+  * [Bitcoin Kernel C API introduced](#kernelapi)
 * December
 * Featured summaries
   * [Vulnerabilities](#vulns)
@@ -331,6 +332,21 @@ FIXME:Gustavojfe
 {:#bip3}
 - **BIP3 and the BIP process:** ...
 
+{:#kernelapi}
+- **Bitcoin Kernel C API introduced:** [Bitcoin Core #30595][] introduces a C
+  header that serves as an API for [`bitcoinkernel`][Bitcoin Core #27587],
+  enabling external projects to interface with Bitcoin Core’s block validation
+  and chainstate logic via a reusable C library. Currently, it is limited to
+  operations on blocks and has feature parity with the now-defunct
+  `libbitcoin-consensus` (see [Newsletter #288][news288 lib]).
+
+  Use cases for `bitcoinkernel` include alternative node implementations, an
+  Electrum server index builder, a [silent payment][topic silent payments]
+  scanner, a block analysis tool, and a script validation accelerator, among
+  others. Several language bindings are in development, including for
+  [Rust][kernel rust], [Go][kernel go], [JDK][kernel jdk], [C#][kernel csharp],
+  and [Python][kernel python].
+
 <div markdown="1" class="callout" id="optech">
 
 ## Summary 2025: Bitcoin Optech
@@ -485,7 +501,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="" %}
+{% include linkers/issues.md v=2 issues="27587,30595" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -530,3 +546,9 @@ Friday publication schedule on January 2nd.*
 [swiftsync delving post]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/
 [swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
 [swiftsync rust impl]: https://delvingbitcoin.org/t/swiftsync-speeding-up-ibd-with-pre-generated-hints-poc/1562/18
+[news288 lib]: /en/newsletters/2024/02/07/#bitcoin-core-29189
+[kernel rust]: https://github.com/sedited/rust-bitcoinkernel
+[kernel go]: https://github.com/stringintech/go-bitcoinkernel
+[kernel jdk]: https://github.com/yuvicc/bitcoinkernel-jdk
+[kernel csharp]: https://github.com/janb84/BitcoinKernel.NET
+[kernel python]: https://github.com/stickies-v/py-bitcoinkernel
