@@ -124,7 +124,12 @@ excerpt: >
   Delving Bitcoin a guide on how to build community consensus for changes to Bitcoin’s consensus rules. According to Towns, the process of establishing consensus can be divided in four steps, namely [research and development][fork guide red], [power user exploration][fork guide pue], [industry evaluation][fork guide ie], and [investor review][fork guide ir]. However, Towns warned readers that the guide aims to be only a high-level procedure, and that it could work only in a cooperative environment.
 
 {:#templatemarketplace}
-- **Private block template marketplace to prevent centralizing MEV:** ...
+- **Private block template marketplace to prevent centralizing MEV:** Developers
+  Matt Corallo and 7d5x9 [posted][template mrkt post] to Delving Bitcoin a proposal that would allow to prevent a future in which MEVil — a form of MEV extraction leading to mining centralization — proliferates on Bitcoin. The proposal, referred to as [MEVpool][mevpool gh], would allow parties to bid in public markets for selected space within miner block templates (i.e. "I’ll pay X [BTC] to include transaction Y as long as it comes before any other transaction which interacts with the smart contract identified by Z").
+
+  While today services of preferential transaction ordering within block templates are expected to be provided only by large miners, leading to centralization, a trust-reduced public market would allow any miner to work on blinded block templates whose complete transactions aren’t revealed to miners until they’ve produced sufficient proof of work to publish the block.
+
+  The authors warned that this proposal would require multiple marketplaces to compete to help preserve decentralization against the dominance of a single trusted marketplace.
 
 {:#lnupfrontfees}
 - **LN upfront and hold fees using burnable outputs:** ...
@@ -353,3 +358,5 @@ Friday publication schedule on January 2nd.*
 [fork guide pue]: https://ajtowns.github.io/bfg/power.html
 [fork guide ie]: https://ajtowns.github.io/bfg/industry.html
 [fork guide ir]: https://ajtowns.github.io/bfg/investor.html
+[template mrkt post]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
+[mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
