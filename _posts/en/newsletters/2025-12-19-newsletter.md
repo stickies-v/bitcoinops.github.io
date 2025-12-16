@@ -281,7 +281,7 @@ powerful, to the significantly confiscatory.
 - **Transaction Templates:** Several soft fork packages were discussed around
   transaction templates. With similar scope and capability are CTV+CSFS
   ([BIP119][]+[BIP348][]) and the [taproot-native re-bindable signature
-  package][BIPs #1974] ([`OP_TEMPLATEHASH`][BIPs
+  package][news thikcs] ([`OP_TEMPLATEHASH`][BIPs
   #1974]+[BIP348][]+[BIP349][]). These represent the minimal capability
   enhancement for Bitcoin Script to enable both re-bindable signatures
   (signatures that do not commit to spending a specific UTXO), and
@@ -715,6 +715,7 @@ Friday publication schedule on January 2nd.*
 [kernel python]: https://github.com/stickies-v/py-bitcoinkernel
 [gcc update]: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
 [gcc bip]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[news thikcs]: /en/newsletters/2025/08/01/#taproot-native-op-templatehash-proposal
 [ctv csfs symmetry]: /en/newsletters/2025/04/04/#ln-symmetry
 [ctv csfs arks]: /en/newsletters/2025/04/04/#ark
 [ctv vaults]: /en/newsletters/2025/04/04/#vaults
