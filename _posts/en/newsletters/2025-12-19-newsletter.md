@@ -355,7 +355,21 @@ powerful, to the significantly confiscatory.
 ## September
 
 {:#simplicity}
-- **Details about the design of Simplicity:** ...
+- **Details about the design of Simplicity:** After the release of
+  [Simplicity][topic simplicity], Russel O'Connor made three posts to
+  Delving Bitcoin to discuss the [philosophy and the design][simplicity 370] behind the
+  language:
+  - [Part I][simplicity I post]: It examines the three major forms of composition
+    for transforming basic operations into complex ones.
+  - [Part II][simplicity II post]: It dives into Simplicity’s type system
+    combinators, and basic expressions.
+  - [Part III][simplicity III post]: It explains how to build logical operations
+    starting from bits up to cryptographic operations using just computational
+    Simplicity combinators.
+
+  Since September, two more posts have been published to Delving Bitcoin,
+  [Part IV][simplicity IV post], discussing about side effects, and
+  [Part V][simplicity V post], dealing with programs and addresses.
 
 {:#eclipseattacks}
 - **Partitioning and eclipse attacks using BGP interception:** ...
@@ -654,3 +668,9 @@ Friday publication schedule on January 2nd.*
 [ecmath]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
 [gsr bips]: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
 [transitory cleanups]: /en/newsletters/2025/01/03/#transitory-soft-forks-for-cleanup-soft-forks
+[simplicity 370]: /en/newsletters/2025/09/05/#details-about-the-design-of-simplicity
+[simplicity I post]: https://delvingbitcoin.org/t/delving-simplicity-part-three-fundamental-ways-of-combining-computations/1902
+[simplicity II post]: https://delvingbitcoin.org/t/delving-simplicity-part-combinator-completeness-of-simplicity/1935
+[simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
+[simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
+[simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
