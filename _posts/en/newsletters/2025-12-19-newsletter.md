@@ -93,20 +93,21 @@ excerpt: >
 ## February
 
 {:#erlay}
-- **Erlay update:** Sergi Delgado made [several posts][erlay optech posts] over
-  the last year about his work and progress implementing [Erlay][erlay] for
-  Bitcoin Core. In the first post, he gave an overview on the Erlay proposal and
-  how the current transaction relay works (called fanout). In these posts, he
-  discusses different results that he found while developing Erlay, such as
-  [filtering based on transaction knowledge][erlay knowledge] not mattering as
-  much as expected. He also experimented with selecting [how many peers should
-  receive a fanout][erlay fanout amount], and found that there was a 35%
-  bandwidth savings with 8 outbound peers and 45% with 12 outbound peers, but
-  also found a 240% increase in latency. In his two other experiments, he
-  determined the [fanout rate based on how a transaction was
-  received][erlay transaction received] and [when to select canidate
-  peers][erlay candidate peers]. These experiments, which combined fanout and
-  reconciliation, helped him determine when to use each method.
+
+- **Erlay update:** Sergi Delgado made [several posts][erlay optech posts] this
+  year about his work and progress implementing [Erlay][erlay] for Bitcoin Core.
+  In the first post, he gave an overview of the Erlay proposal and how the
+  current transaction relay works (called fanout). In these posts, he discussed
+  different results that he found while developing Erlay, such as [filtering
+  based on transaction knowledge][erlay knowledge] not being as impactful as
+  expected. He also experimented with selecting [how many peers should receive a
+  fanout][erlay fanout amount], and found that there was a 35% bandwidth savings
+  with 8 outbound peers and 45% with 12 outbound peers, but also found a 240%
+  increase in latency. In his two other experiments, he determined the [fanout
+  rate based on how a transaction was received][erlay transaction received] and
+  [when to select candidate peers][erlay candidate peers]. These experiments,
+  which combined fanout and reconciliation, helped him determine when to use
+  each method.
 
 {:#lneas}
 - **LN ephemeral anchor scripts:** ...
@@ -526,14 +527,16 @@ FIXME:Gustavojfe
 ## October
 
 {:#arbdata}
+
 - **Theoretical limitations on embedding data in the UTXO set:** ...
 
 {:#channeljamming}
+
 - **Channel jamming mitigation simulation results and updates:** Carla
-  Kirck-Cohen in collaboration with Clara Shikhelman and elnosh had updated the
-  [lightning jamming simulation results][channel jamming results], and updates
-  to their reputation algorithm. The updates included reputation tracking for
-  outgoing channels, and resources being limited on incoming channels. With
+  Kirk-Cohen, in collaboration with Clara Shikhelman and elnosh, had posted the
+  [Lightning jamming simulation results][channel jamming results] for their
+  updated reputation algorithm. The updates included reputation tracking for
+  outgoing channels, and tracking incoming channel resource limitations. With
   these new updates, they found that it still protects against
   [resource][channel jamming resource] and [sink][channel jamming sink] attacks.
   After this round of updates and simulations, they feel that [channel jamming
@@ -543,21 +546,20 @@ FIXME:Gustavojfe
 ## November
 
 {:#secpperformance}
-- **Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1:** Sebastian Falbesoner conducted an
+
+- **Comparing performance of ECDSA signature validation in OpenSSL vs.
+  libsecp256k1:** Sebastian Falbesoner conducted an
   [analysis][openssl vs libsecp256k1] on the performance of ECDSA signature
   validation between OpenSSL and libsecp256k1. Since 2015, Bitcoin Core has used
   libsecp256k1 over OpenSSL. He wanted to be certain that doing so was the right
-  choice and not a wasted effort. From the start, libsecp256k1 was 2.5-5.5 times
-  faster than OpenSSL, but this analysis was done to see if OpenSSL had made any
-  improvements over the decade and if so did libsecp256k1 keep up. What
-  Falbesoner found was that over the years libsecp256k1 had improved
-  significantly whereas OpenSSL had remained the same. He also concluded that
-  outside the Bitcoin ecosystem, the secp256k1 curve is not that relevant, so it
-  is not justified for OpenSSL to put too many resources into improving it
-  (evident by the results). Overall, switching to libsecp256k1 was a beneficial
-  decision for Bitcoin Core.
+  choice and not a wasted effort. Falbesoner found was that over the years,
+  libsecp256k1 had improved significantly, whereas OpenSSL had remained the
+  same. He also concluded that outside the Bitcoin ecosystem, the secp256k1
+  curve is not that relevant, so it is not justified for OpenSSL to put too many
+  resources into improving it (evident by the results).
 
 {:#restrictingdata}
+
 - **Multiple discussions about restricting data:** ...
 
 {:#stalerates}
