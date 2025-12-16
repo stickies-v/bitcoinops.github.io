@@ -64,6 +64,7 @@ excerpt: >
   * [Vulnerabilities](#vulns)
   * [Quantum](#quantum)
   * [Soft fork proposals](#softforks)
+  * [Stratum V2](#stratumv2)
   * [Major releases of popular infrastructure projects](#releases)
   * [Bitcoin Optech](#optech)
 
@@ -373,6 +374,52 @@ powerful, to the significantly confiscatory.
 {:#eclipseattacks}
 - **Partitioning and eclipse attacks using BGP interception:** ...
 
+<div markdown="1" class="callout" id="stratumv2">
+
+## Summary 2025: Stratum V2
+
+[Stratum V2][topic pooled mining] is a mining protocol designed to replace the
+original Stratum protocol used between miners and mining pools. One of its key
+advantages is that it can allow individual pool members to choose which
+transactions to include in their blocks. This could improve Bitcoin's censorship
+resistance by distributing transaction selection across many independent miners.
+
+Throughout 2025, Bitcoin Core received several updates to better support Stratum
+V2 implementations. Some improvements earlier in the year were focused on
+improving the mining RPCs, [upgrading them][news339 sv2fields] with `nBits`,
+`target`, and `next` fields, useful for constructing and validating block
+templates.
+
+The most significant work focused on Bitcoin Core's experimental inter-process
+communication (IPC) interface, which allows an external Stratum V2 service to
+interact with Bitcoin Core's block validation without going through the slower
+JSON-RPC interface. A new [`waitNext()`][news346 waitnext] method was introduced
+to the `BlockTemplate` interface that only returns a new template when the chain
+tip changes or when mempool fees increase significantly, reducing unnecessary
+template generation. [`checkBlock`][news360 checkblock] was then added, enabling
+pools to validate miner-provided templates via IPC. IPC was also
+[enabled][news369 ipc] by default, and the new `bitcoin-node` and other
+multiprocess binaries added to release builds. A new bitcoin wrapper executable
+was [added][Bitcoin Core #31375] to easily discover and launch an increasing number
+of binaries, and a follow-up [implemented][news374 ipcauto] automatic
+multiprocess selection, removing the need for the `-m` startup flag. This year's
+IPC improvements were wrapped up by [reducing CPU consumption][news377 ipclog]
+for multiprocess logging and [ensuring][news381 witness] that blocks submitted
+via IPC have their witness commitment revalidated.
+
+[Bitcoin Core 30.0][news376 30], released in October, was the first release to
+include the experimental IPC mining interface after it was first
+[introduced][news323 miningipc] last year.
+
+In June, StarkWare [demonstrated][news359 starkware] a modified Stratum v2
+client using STARK proofs to prove that a block's fees belong to a valid
+template without revealing the block's transactions. Two new Stratum V2-based
+mining pools also launched: [Hashpool][news346 hashpool], which represents
+mining shares as [ecash][topic ecash] tokens, and DMND, which expanded from solo
+mining to pooled mining.
+
+</div>
+
 <div markdown="1" class="callout" id="releases">
 
 ## Summary 2025: Major releases of popular infrastructure projects
@@ -593,7 +640,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1699,1974,27587,30595" %}
+{% include linkers/issues.md v=2 issues="1699,1974,27587,30595,31375" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -673,3 +720,14 @@ Friday publication schedule on January 2nd.*
 [simplicity III post]: https://delvingbitcoin.org/t/delving-simplicity-part-building-data-types/1956
 [simplicity IV post]: https://delvingbitcoin.org/t/delving-simplicity-part-two-side-effects/2091
 [simplicity V post]: https://delvingbitcoin.org/t/delving-simplicity-part-programs-and-addresses/2113
+[news339 sv2fields]: /en/newsletters/2025/01/31/#bitcoin-core-31583
+[news346 waitnext]: /en/newsletters/2025/03/21/#bitcoin-core-31283
+[news360 checkblock]: /en/newsletters/2025/06/27/#bitcoin-core-31981
+[news359 starkware]: /en/newsletters/2025/06/20/#stratum-v2-stark-proof-demo
+[news369 ipc]: /en/newsletters/2025/08/29/#bitcoin-core-31802
+[news374 ipcauto]: /en/newsletters/2025/10/03/#bitcoin-core-33229
+[news376 30]: /en/newsletters/2025/10/17/#bitcoin-core-30-0
+[news377 ipclog]: /en/newsletters/2025/10/24/#bitcoin-core-33517
+[news381 witness]: /en/newsletters/2025/11/21/#bitcoin-core-33745
+[news346 hashpool]: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
+[news323 miningipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
