@@ -460,7 +460,14 @@ powerful, to the significantly confiscatory.
   [Part V][simplicity V post], dealing with programs and addresses.
 
 {:#eclipseattacks}
-- **Partitioning and eclipse attacks using BGP interception:** ...
+
+- **Partitioning and eclipse attacks using BGP interception:** Cedarctic
+  [posted][Cedarctic post] to Delving Bitcoin about flaws in Border Gateway
+  Protocol (BGP) to prevent full nodes from being able to connect to peers,
+  which could be used to partition the network or execute an [eclipse
+  attack][eclipse attack]. Several mitigations were described by cedarctic,
+  with other developers in the discussion describing other mitigations and
+  ways to monitor for use of the attack.
 
 <div markdown="1" class="callout" id="stratumv2">
 
@@ -840,3 +847,5 @@ Friday publication schedule on January 2nd.*
 [news frost bip]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 [news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
 [news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
+[Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
+[eclipse attack]: /en/topics/eclipse-attacks/
