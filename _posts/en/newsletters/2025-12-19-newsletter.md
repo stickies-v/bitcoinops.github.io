@@ -201,7 +201,29 @@ excerpt: >
 ## May
 
 {:#clustermempool}
-- **Cluster mempool:** ...
+- **Cluster mempool:**
+  In January, Stefan Richter prompted excitement by [discovering][news340 richter ggt]
+  that an efficient algorithm for the _maximum-ratio closure problem_ from a
+  1989 research paper could be applied to cluster linearization. Pieter Wuille
+  extended his research to incorporate this minimal-cut-based third approach.
+  In February, Pieter Wuille [walked][news341 pr-review-club txgraph] the Bitcoin Core
+  PR Review Club through the newly introduced `TxGraph` class which distills
+  transactions to only weight, fees, and relationships for efficient
+  interaction with the mempool graph.
+  In May, Wuille described the [tradeoffs][news352 wuille linearization techniques] of
+  the three cluster linearization approaches and provided benchmarks, finding
+  that both advanced approaches were far more efficient than the simple
+  candidate-set search, but the linear programming-based spanning-forest
+  linearization algorithm would be more practical than the min-cut-based
+  algorithm.
+  In October, Abubakar Sadiq Ismail [described][news377 ismail
+  template improvement] how the cluster mempool could be leveraged to track
+  when the mempool content had significantly improved upon a prior block
+  template.
+  In November, the cluster mempool implementation was [completed][news382 cluster
+  mempool completed], staging it to be released per Bitcoin
+  Core 31.0. Work to replace the initial candidate-set search linearization
+  algorithm with the spanning-forest linearization algorithm is on-going.
 
 {:#opreturn}
 - **Increasing or removing Bitcoin Core’s OP_RETURN size limit:** ...
@@ -640,7 +662,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1699,1974,27587,30595,31375" %}
+{% include linkers/issues.md v=2 issues="1699,1974,27587,30595,31375,33629" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -731,3 +753,8 @@ Friday publication schedule on January 2nd.*
 [news381 witness]: /en/newsletters/2025/11/21/#bitcoin-core-33745
 [news346 hashpool]: /en/newsletters/2025/03/21/#hashpool-v0-1-tagged
 [news323 miningipc]: /en/newsletters/2024/10/04/#bitcoin-core-30510
+[news340 richter ggt]: /en/newsletters/2025/02/07/#discovery-of-previous-research-for-finding-optimal-cluster-linearization
+[news341 pr-review-club txgraph]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
+[news352 wuille linearization techniques]: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
+[news377 ismail template improvement]: /en/newsletters/2025/10/24/#detecting-block-template-feerate-increases-using-cluster-mempool
+[news382 cluster mempool completed]: /en/newsletters/2025/11/28/#bitcoin-core-33629)
