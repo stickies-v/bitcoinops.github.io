@@ -374,7 +374,7 @@ powerful, to the significantly confiscatory.
   enthusiasm remain high.
 
 {:#consensuscleanup}
-- **Consensus Cleanup:** The [consensus cleanup][consensus cleanup] proposal
+- **Consensus Cleanup:** The [consensus cleanup][topic consensus cleanup] proposal
   was [updated][gcc update] based on feedback and additional research, a
   [draft bip][gcc bip] was published and merged as [BIP54][] and now [includes
   an implementation and test vectors][gcc impl tests]. Earlier this year,
@@ -791,7 +791,6 @@ Friday publication schedule on January 2nd.*
 [ctv csfs ptlcs]: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
 [ctv csfs bitvm]: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
 [ctv csfs letter]: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
-[consensus cleanup]: /en/topics/consensus-cleanup-soft-fork
 [gcc impl tests]: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
 [ccv bip]: /en/newsletters/2025/05/30/#bips-1793
 [ccv semantics]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
