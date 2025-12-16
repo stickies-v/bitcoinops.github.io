@@ -73,10 +73,19 @@ excerpt: >
 ## January
 
 {:#chilldkg}
-- **Updated ChillDKG draft:** ...
+- **Updated ChillDKG draft:** Tim Ruffing and Jonas Nick updated their work on
+  a distributed key generation protocol (DKG) for use with the [FROST][news
+  frost bip] [threshold signature][topic threshold signature] scheme. ChillDKG
+  aims to provide similar recoverability features to existing descriptor
+  wallets.
 
 {:#offchaindlcs}
-- **Offchain DLCs:** ...
+- **Offchain DLCs:** Developer Conduition [posted about][news offchain dlc] a
+  new offchain DLC ([discreet log contract][topic dlc]) mechanism that enables
+  participants to collaborate on the creation and extension of a DLC factory
+  which allows iterative DLCs that roll along until one party chooses to
+  resolve on chain. This contrasts with [prior work][news dlc channels] on
+  offchain DLCs which required interaction at each roll of the contract.
 
 {:#compactblockstats}
 - **Stats on compact block reconstruction:** ...
@@ -829,3 +838,6 @@ Friday publication schedule on January 2nd.*
 [conduition sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 [abdel stark]: /en/newsletters/2025/11/07/#native-stark-proof-verification-in-bitcoin-script
 [news qr agg]: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
+[news frost bip]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
+[news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
+[news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
