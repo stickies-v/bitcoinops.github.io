@@ -257,27 +257,27 @@ powerful, to the significantly confiscatory.
 {:#txtemplates}
 - **Transaction Templates:** Several soft fork packages were discussed around
   transaction templates. With similar scope and capability are CTV+CSFS
-  ([BIP119][]+[BIP348][]) and the [Taproot-native re-bindable signature
+  ([BIP119][]+[BIP348][]) and the [taproot-native re-bindable signature
   package][BIPs #1974] ([`OP_TEMPLATEHASH`][BIPs
   #1974]+[BIP348][]+[BIP349][]). These represent the minimal capability
-  enhancement for bitcoin script to enable both re-bindable signatures
+  enhancement for Bitcoin Script to enable both re-bindable signatures
   (signatures that do not commit to spending a specific UTXO), and
   pre-commitment to spending a UTXO to a specific next transaction (sometimes
-  called an equality covenant). If activated, they would enable [Lightning
-  Symmetry][ctv csfs symmetry], [simple CTV vaults][ctv vaults], [reducing DLC
-  signature requirements][ctv dlcs], [reducing interactivity for Arks][ctv
-  csfs arks], [simplified PTLCs][ctv csfs ptlcs], and more. One difference
+  called an equality covenant). If activated, they would enable
+  LN-Symmetry][ctv csfs symmetry], [simple CTV vaults][ctv vaults], [reduce DLC
+  signature requirements][ctv dlcs], [reduce interactivity for Arks][ctv
+  csfs arks], [simplify PTLCs][ctv csfs ptlcs], and more. One difference
   between these proposals is that `OP_TEMPLATEHASH` cannot be used in the
   [BitVM sibling hack][ctv csfs bitvm] where CTV can, due to `OP_TEMPLATEHASH`
   not committing to `scriptSigs`.
 
   By including CSFS, these proposals also enable multi-commitments (committing
   to multiple related and optionally ordered values in a locking or spend
-  script) similar to Merkle trees through [Key Laddering][rubin key ladder].
+  script) similar to merkle trees through [Key Laddering][rubin key ladder].
   The updated [LNHANCE][lnhance update] proposal includes `OP_PAIRCOMMIT`
   ([BIPs #1699][]) to enable multi-commitments without the additional script
   size and validation cost required for Key Laddering. Multi-commitments are
-  useful in Lightning Symmetry, complex delegations, and more.
+  useful in LN-Symmetry, complex delegations, and more.
 
   Some developers [expressed frustration][ctv csfs letter] about the (from
   their perspective) slow progress toward a soft fork, but the volume of
@@ -291,7 +291,7 @@ powerful, to the significantly confiscatory.
   an implementation and test vectors][gcc impl tests]. Earlier this year,
   there was [discussion][transitory cleanups] of whether such cleanups should
   be made temporary in case of unintentional confiscation, but the necessity
-  of reevaluating such a temporary soft fork to avoid a chain split every time
+  of reevaluating such a [temporary soft fork][topic transitory soft forks] to avoid a chain split every time
   it expires makes such temporary soft forks a hard sell.
 
 {:opcodes}
@@ -307,19 +307,19 @@ powerful, to the significantly confiscatory.
 
   A set of 64-bit arithmetic opcodes were [proposed][64bit bip]. Bitcoin's
   current math operations are (surprisingly) not able to operate on the full
-  range of bitcoin input and output amounts. Combined with other opcodes to
-  access and/or constrain input/output amounts these expanded arithmetic
-  operations could enable new bitcoin wallet functionality.
+  range of Bitcoin input and output amounts. Combined with other opcodes to
+  access and/or constrain input/output amounts, these expanded arithmetic
+  operations could enable new Bitcoin wallet functionality.
 
-  [OP_TXHASH][txhash] got a [variant][txhash sponsors] that would enable
+  A [variant][txhash sponsors] of [`OP_TXHASH`][txhash] would enable
   [transaction sponsorship][topic fee sponsorship].
 
   Developers proposed two options for giving Script elliptic curve
-  cryptographic operations other than CHECKSIG and friends. One
+  cryptographic operations other than `OP_CHECKSIG` and related operations. One
   [proposes][tweakadd] `OP_TWEAKADD` to enable constructing taproot
   `scriptPubKeys`. The other [proposes][ecmath] more granular elliptic curve
   opcodes such as `EC_POINT_ADD` motivated by similar functionality, but with
-  more applications such as new signature verifications or multi-signature
+  more potential applications such as new signature verifications or multi-signature
   functionality. Either of these proposals could be combined with `OP_TXHASH`
   and 64-bit arithmetic (or similar opcodes) to enable functionality similar
   to CCV.
@@ -328,8 +328,7 @@ powerful, to the significantly confiscatory.
 - **Script Restoration:** A series of 4 BIPs were [posted][gsr bips] for the
   Script Restoration project. The Script changes and opcodes proposed in these
   4 BIPs would enable all of the functionality proposed in the above opcode
-  proposals and more while restoring and updating Script to be more useful to
-  developers and users alike.
+  proposals while allowing even more script expressivity.
 
 </div>
 
