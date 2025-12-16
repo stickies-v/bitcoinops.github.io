@@ -561,7 +561,21 @@ FIXME:Gustavojfe
 - **Multiple discussions about restricting data:** ...
 
 {:#stalerates}
-- **Modeling stale rates by propagation delay and mining centralization:** ...
+
+- **Modeling stale rates by propagation delay and mining centralization:**
+  Antoine Poinsot [posted][Antoine post] to Delving Bitcoin about modeling stale
+  block rates and how block propagation time affects a miner's revenue as a
+  function of its hashrate. In the post he setup a base-case scenario which
+  miners act realistically (default Bitcoin Core). This lead to a revenue
+  proportional to their share of hashrate. He then outlines two situations in
+  which a block goes stale. The situations were either another miner found a
+  block before this miner or another miner found a block after this miner.
+  Poinsot pointed out that between these two situations a block is more likley
+  to become stale in the first one, he suggests that miners prefer to hear about
+  others' blocks faster than publishing their own. Later in the post he computes
+  by exactly how much does the probability increase and found that if a mining
+  operation with 5EH/s can expect a revenue of $91M and if blocks took 10
+  seconds to propogate the revenue would increase by $100k.
 
 {:#bip3}
 - **BIP3 and the BIP process:** ...
@@ -849,3 +863,4 @@ Friday publication schedule on January 2nd.*
 [news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
 [Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
 [eclipse attack]: /en/topics/eclipse-attacks/
+[Antoine post]: /en/newsletters/2025/11/21/#modeling-stale-rates-by-propagation-delay-and-mining-centralization
