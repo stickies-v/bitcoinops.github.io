@@ -250,7 +250,86 @@ excerpt: >
 
 ## Summary 2025: Soft fork proposals
 
-...
+This year saw a bevvy of discussions around soft fork proposals ranging from
+the tightly scoped and minimally impactful, to the broadly scoped and
+powerful, to the significantly confiscatory.
+
+{:#txtemplates}
+- **Transaction Templates:** Several soft fork packages were discussed around
+  transaction templates. With similar scope and capability are CTV+CSFS
+  ([BIP119][]+[BIP348][]) and the [Taproot-native re-bindable signature
+  package][BIPs #1974] ([`OP_TEMPLATEHASH`][BIPs
+  #1974]+[BIP348][]+[BIP349][]). These represent the minimal capability
+  enhancement for bitcoin script to enable both re-bindable signatures
+  (signatures that do not commit to spending a specific UTXO), and
+  pre-commitment to spending a UTXO to a specific next transaction (sometimes
+  called an equality covenant). If activated, they would enable [Lightning
+  Symmetry][ctv csfs symmetry], [simple CTV vaults][ctv vaults], [reducing DLC
+  signature requirements][ctv dlcs], [reducing interactivity for Arks][ctv
+  csfs arks], [simplified PTLCs][ctv csfs ptlcs], and more. One difference
+  between these proposals is that `OP_TEMPLATEHASH` cannot be used in the
+  [BitVM sibling hack][ctv csfs bitvm] where CTV can, due to `OP_TEMPLATEHASH`
+  not committing to `scriptSigs`.
+
+  By including CSFS, these proposals also enable multi-commitments (committing
+  to multiple related and optionally ordered values in a locking or spend
+  script) similar to Merkle trees through [Key Laddering][rubin key ladder].
+  The updated [LNHANCE][lnhance update] proposal includes `OP_PAIRCOMMIT`
+  ([BIPs #1699][]) to enable multi-commitments without the additional script
+  size and validation cost required for Key Laddering. Multi-commitments are
+  useful in Lightning Symmetry, complex delegations, and more.
+
+  Some developers [expressed frustration][ctv csfs letter] about the (from
+  their perspective) slow progress toward a soft fork, but the volume of
+  discussion around this category of proposal suggests that interest and
+  enthusiasm remain high.
+
+{:#consensuscleanup}
+- **Consensus Cleanup:** The [consensus cleanup][consensus cleanup] proposal
+  was [updated][gcc update] based on feedback and additional research, a
+  [draft bip][gcc bip] was published and merged as [BIP54][] and now [includes
+  an implementation and test vectors][gcc impl tests]. Earlier this year,
+  there was [discussion][transitory cleanups] of whether such cleanups should
+  be made temporary in case of unintentional confiscation, but the necessity
+  of reevaluating such a temporary soft fork to avoid a chain split every time
+  it expires makes such temporary soft forks a hard sell.
+
+{:opcodes}
+- **Opcode proposals:** In addition to the grouped changes discussed above,
+  there were a number of other Script opcodes proposed or refined in 2025.
+
+  `OP_CHECKCONTRACTVERIFY` (CCV) [became][ccv bip] [BIP443][] with
+  [refined][ccv semantics] semantics especially around flow of funds. CCV
+  enables reactive security vaults, and a wide array of other contracts by
+  constraining the `scriptPubKey` and amount of an input or output in certain
+  ways. The `OP_VAULT` proposal was [withdrawn][vault withdrawn] in favor of
+  CCV as well. For more on CCV's applications, see [MATT][topic MATT].
+
+  A set of 64-bit arithmetic opcodes were [proposed][64bit bip]. Bitcoin's
+  current math operations are (surprisingly) not able to operate on the full
+  range of bitcoin input and output amounts. Combined with other opcodes to
+  access and/or constrain input/output amounts these expanded arithmetic
+  operations could enable new bitcoin wallet functionality.
+
+  [OP_TXHASH][txhash] got a [variant][txhash sponsors] that would enable
+  [transaction sponsorship][topic fee sponsorship].
+
+  Developers proposed two options for giving Script elliptic curve
+  cryptographic operations other than CHECKSIG and friends. One
+  [proposes][tweakadd] `OP_TWEAKADD` to enable constructing taproot
+  `scriptPubKeys`. The other [proposes][ecmath] more granular elliptic curve
+  opcodes such as `EC_POINT_ADD` motivated by similar functionality, but with
+  more applications such as new signature verifications or multi-signature
+  functionality. Either of these proposals could be combined with `OP_TXHASH`
+  and 64-bit arithmetic (or similar opcodes) to enable functionality similar
+  to CCV.
+
+{:scriptrestoration}
+- **Script Restoration:** A series of 4 BIPs were [posted][gsr bips] for the
+  Script Restoration project. The Script changes and opcodes proposed in these
+  4 BIPs would enable all of the functionality proposed in the above opcode
+  proposals and more while restoring and updating Script to be more useful to
+  developers and users alike.
 
 </div>
 
@@ -501,7 +580,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="27587,30595" %}
+{% include linkers/issues.md v=2 issues="1699,1974,27587,30595" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -552,3 +631,26 @@ Friday publication schedule on January 2nd.*
 [kernel jdk]: https://github.com/yuvicc/bitcoinkernel-jdk
 [kernel csharp]: https://github.com/janb84/BitcoinKernel.NET
 [kernel python]: https://github.com/stickies-v/py-bitcoinkernel
+[gcc update]: /en/newsletters/2025/02/07/#updates-to-cleanup-soft-fork-proposal
+[gcc bip]: /en/newsletters/2025/04/04/#draft-bip-published-for-consensus-cleanup
+[ctv csfs symmetry]: /en/newsletters/2025/04/04/#ln-symmetry
+[ctv csfs arks]: /en/newsletters/2025/04/04/#ark
+[ctv vaults]: /en/newsletters/2025/04/04/#vaults
+[ctv dlcs]: /en/newsletters/2025/04/04/#dlcs
+[lnhance update]: /en/newsletters/2025/12/05/#lnhance-soft-fork
+[rubin key ladder]: https://rubin.io/bitcoin/2024/12/02/csfs-ctv-rekey-symmetry/
+[ctv csfs ptlcs]: /en/newsletters/2025/07/04/#ctv-csfs-advantages-for-ptlcs
+[ctv csfs bitvm]: /en/newsletters/2025/05/16/#description-of-benefits-to-bitvm-from-op-ctv-and-op-csfs
+[ctv csfs letter]: /en/newsletters/2025/07/04/#open-letter-about-ctv-and-csfs
+[consensus cleanup]: /en/topics/consensus-cleanup-soft-fork
+[gcc impl tests]: /en/newsletters/2025/11/07/#bip54-implementation-and-test-vectors
+[ccv bip]: /en/newsletters/2025/05/30/#bips-1793
+[ccv semantics]: /en/newsletters/2025/04/04/#op-checkcontractverify-semantics
+[vault withdrawn]: /en/newsletters/2025/05/16/#bips-1848
+[64bit bip]: /en/newsletters/2025/05/16/#proposed-bip-for-64-bit-arithmetic-in-script
+[txhash sponsors]: /en/newsletters/2025/07/04/#op-txhash-variant-with-support-for-transaction-sponsorship
+[txhash]: /en/newsletters/2022/02/02/#composable-alternatives-to-ctv-and-apo
+[tweakadd]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+[ecmath]: /en/newsletters/2025/09/05/#draft-bip-for-adding-elliptic-curve-operations-to-tapscript
+[gsr bips]: /en/newsletters/2025/10/03/#draft-bips-for-script-restoration
+[transitory cleanups]: /en/newsletters/2025/01/03/#transitory-soft-forks-for-cleanup-soft-forks
