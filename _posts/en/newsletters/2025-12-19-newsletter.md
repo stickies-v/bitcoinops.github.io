@@ -845,7 +845,7 @@ Friday publication schedule on January 2nd.*
 [news341 pr-review-club txgraph]: /en/newsletters/2025/02/14/#bitcoin-core-pr-review-club
 [news352 wuille linearization techniques]: /en/newsletters/2025/05/02/#comparison-of-cluster-linearization-techniques
 [news377 ismail template improvement]: /en/newsletters/2025/10/24/#detecting-block-template-feerate-increases-using-cluster-mempool
-[news382 cluster mempool completed]: /en/newsletters/2025/11/28/#bitcoin-core-33629)
+[news382 cluster mempool completed]: /en/newsletters/2025/11/28/#bitcoin-core-33629
 [news bip360 update]: /en/newsletters/2025/03/07/#update-on-bip360-pay-to-quantum-resistant-hash-p2qrh
 [news qr sha]: /en/newsletters/2025/04/04/#securely-proving-utxo-ownership-by-revealing-a-sha256-preimage
 [news qr cr]: /en/newsletters/2025/07/04/#commit-reveal-function-for-post-quantum-recovery
