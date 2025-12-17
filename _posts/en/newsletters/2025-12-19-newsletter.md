@@ -126,29 +126,28 @@ excerpt: >
 ## March
 
 {:#forkingguide}
-- **Bitcoin Forking Guide:** Anthony Towns [posted][fork guide post] to Delving
-  Bitcoin a guide on how to build community consensus for changes to Bitcoin’s
-  consensus rules. According to Towns, the process of establishing consensus can
-  be divided in four steps, namely [research and development][fork guide red],
-  [power user exploration][fork guide pue], [industry evaluation][fork guide
-  ie], and [investor review][fork guide ir]. However, Towns warned readers that
-  the guide aims to be only a high-level procedure, and that it could work only
-  in a cooperative environment.
+- **Bitcoin Forking Guide:** In February, Anthony Towns posted
+  to Delving  Bitcoin [a guide][news344 fork guide] on how to build community
+  consensus for changes to Bitcoin’s consensus rules. According to Towns, the process
+  of establishing consensus can be divided in four steps, namely
+  [research and development][fork guide red], [power user exploration][fork guide pue],
+  [industry evaluation][fork guide ie], and [investor review][fork guide ir].
+  However, Towns warned readers that the guide aims to be only a high-level procedure,
+  and that it could work only in a cooperative environment.
 
 {:#templatemarketplace}
 - **Private block template marketplace to prevent centralizing MEV:** Developers
-  Matt Corallo and 7d5x9 [posted][template mrkt post] to Delving Bitcoin a
-  proposal that would allow to prevent a future in which MEVil — a form of MEV
-  extraction leading to mining centralization — proliferates on Bitcoin. The
+  Matt Corallo and 7d5x9 posted to Delving Bitcoin [a proposal][news344 template mrkt] that could help prevent a future in which MEVil, a form of MEV
+  extraction leading to mining centralization, proliferates on Bitcoin. The
   proposal, referred to as [MEVpool][mevpool gh], would allow parties to bid in
   public markets for selected space within miner block templates (i.e. "I’ll pay
   X [BTC] to include transaction Y as long as it comes before any other
   transaction which interacts with the smart contract identified by Z").
 
-  While today services of preferential transaction ordering within block
+  While services of preferential transaction ordering within block
   templates are expected to be provided only by large miners, leading to
   centralization, a trust-reduced public market would allow any miner to work on
-  blinded block templates whose complete transactions aren’t revealed to miners
+  blinded block templates, whose complete transactions aren’t revealed to miners
   until they’ve produced sufficient proof of work to publish the block.
 
   The authors warned that this proposal would require multiple marketplaces to
@@ -156,19 +155,18 @@ excerpt: >
   trusted marketplace.
 
 {:#lnupfrontfees}
-- **LN upfront and hold fees using burnable outputs:** John Law [posted][ln fees post]
-  to Delving Bitcoin the summary of a [paper][ln fees paper] he has written about a
-  protocol that Lighting nodes can use to charge two additional types of fees for
-  forwarding payments, an upfront fee and a hold fee. The former would be paid by
+- **LN upfront and hold fees using burnable outputs:** John Law proposed
+  [a solution][news 347 ln fees] to
+  [channel jamming attacks][topic channel jamming attacks], a weakness in the
+  Lightning Network protocol that allows an attacker to costlessly prevent other nodes
+  from using their funds.
+  The proposal summarizes a [paper][ln fees paper] he has written about the possibility
+  for Lighting nodes to charge two additional types of fees for forwarding payments,
+  an upfront fee and a hold fee. The former would be paid by
   the ultimate spender to compensate forwarding nodes for temporarily using an
   [HTLC][topic htlc] slot, while the latter would be paid by any node that delays
   the settlement of an HTLC, with the payment amount scaling up with the length
   of the delay.
-
-  Law describes the protocol as a solution for
-  [channel jamming attacks][topic channel jamming attacks], a weakness in the Lightning
-  Network protocol that allows an attacker to costlessly prevent other nodes
-  from using some or all of their funds.
 
 ## April
 
@@ -783,14 +781,14 @@ Friday publication schedule on January 2nd.*
 [eagen paper]: https://eprint.iacr.org/2025/1485
 [dahlias post]: https://mailing-list.bitcoindevs.xyz/bitcoindev/be3813bf-467d-4880-9383-2a0b0223e7e5@gmail.com/
 [dahlias paper]: https://eprint.iacr.org/2025/692.pdf
-[fork guide post]: https://delvingbitcoin.org/t/bitcoin-forking-guide/1451
+[news344 fork guide]: /en/newsletters/2025/03/07/#bitcoin-forking-guide
 [fork guide red]: https://ajtowns.github.io/bfg/research.html
 [fork guide pue]: https://ajtowns.github.io/bfg/power.html
 [fork guide ie]: https://ajtowns.github.io/bfg/industry.html
 [fork guide ir]: https://ajtowns.github.io/bfg/investor.html
-[template mrkt post]: https://delvingbitcoin.org/t/best-worst-case-mevil-response/1465
+[news344 template mrkt]: /en/newsletters/2025/03/07/#private-block-template-marketplace-to-prevent-centralizing-mev
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
-[ln fees post]: https://delvingbitcoin.org/t/fee-based-spam-prevention-for-lightning/1524
+[news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
 [swiftsync delving post]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/
 [swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
