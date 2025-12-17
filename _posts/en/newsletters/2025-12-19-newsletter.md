@@ -129,7 +129,19 @@ excerpt: >
   each method.
 
 {:#lneas}
-- **LN ephemeral anchor scripts:** ...
+- **LN ephemeral anchor scripts:** After several updates to [mempool policies in
+  Bitcoin Core 28.0][28.0 wallet guide], discussion began in February around
+  design choices for [ephemeral anchor outputs][topic ephemeral anchors] in LN
+  commitment transactions. Contributors [examined][news340 lneas] which script
+  constructions should be used as one of the outputs of [TRUC][topic v3
+  transaction relay]-based commitment transactions as a replacement for
+  existing [anchor outputs][topic anchor outputs].
+
+  The tradeoffs included how different scripts affect [CPFP][topic cpfp] fee
+  bumping, transaction weight, and the ability to safely spend or discard anchor
+  outputs when they are no longer needed. [Continued discussion][news341 lneas]
+  highlighted interactions with mempool policy and Lightning’s security
+  assumptions.
 
 {:#probpayments}
 - **Probabilistic payments:** ...
@@ -903,3 +915,6 @@ Friday publication schedule on January 2nd.*
 [news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
 [news382 compact blocks]: /en/newsletters/2025/11/28/#stats-on-compact-block-reconstructions-updates
 [news368 monitoring]: /en/newsletters/2025/08/22/#peer-observer-tooling-and-call-to-action
+[28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
+[news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
+[news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
