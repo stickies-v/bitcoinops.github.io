@@ -203,18 +203,19 @@ excerpt: >
 
 {:#swiftsync}
 - **SwiftSync speedup for initial block download:** Sebastian Falbesoner
-  [posted][swiftsync delving post] to Delving Bitcoin a sample implementation
+  [posted][news349 swiftsync] to Delving Bitcoin a sample implementation
   and results of a >5x speedup of _initial block download_ (IBD) through
   SwiftSync, an idea initially [proposed][swiftsync ruben gh] by Ruben Somsen.
 
   The speedup is achieved during IBD by only adding coins to the UTXO set when
   they will still be in the UTXO set at the end of IBD. This knowledge of the
-  final UTXO set state stated is compactly encoded in a minimally trusted
+  final UTXO set state stated is compactly encoded in a minimally trusted,
   pre-generated hints file. In addition to minimizing overhead on chainstate
   operations, SwiftSync enables further performance improvements by allowing
   parallel block validation.
 
-  Work on a Rust implementation is [underway][swiftsync rust impl].
+  Work on a Rust implementation was [announced][swiftsync rust impl] in
+  September.
 
 
 {:#dahlias}
@@ -552,8 +553,8 @@ tip changes or when mempool fees increase significantly, reducing unnecessary
 template generation. [`checkBlock`][news360 checkblock] was then added, enabling
 pools to validate miner-provided templates via IPC. IPC was also
 [enabled][news369 ipc] by default, and the new `bitcoin-node` and other
-multiprocess binaries added to release builds. A new bitcoin wrapper executable
-was [added][Bitcoin Core #31375] to easily discover and launch an increasing number
+multiprocess binaries were added to release builds. A new bitcoin wrapper executable
+was [added][news357 wrapper] to easily discover and launch an increasing number
 of binaries, and a follow-up [implemented][news374 ipcauto] automatic
 multiprocess selection, removing the need for the `-m` startup flag. This year's
 IPC improvements were wrapped up by [reducing CPU consumption][news377 ipclog]
@@ -568,8 +569,8 @@ In June, StarkWare [demonstrated][news359 starkware] a modified Stratum v2
 client using STARK proofs to prove that a block's fees belong to a valid
 template without revealing the block's transactions. Two new Stratum V2-based
 mining pools also launched: [Hashpool][news346 hashpool], which represents
-mining shares as [ecash][topic ecash] tokens, and DMND, which expanded from solo
-mining to pooled mining.
+mining shares as [ecash][topic ecash] tokens, and [DMND][news346 dmnd],
+which expanded from solo mining to pooled mining.
 
 </div>
 
@@ -639,7 +640,7 @@ FIXME:Gustavojfe
 - **BIP3 and the BIP process:** ...
 
 {:#kernelapi}
-- **Bitcoin Kernel C API introduced:** [Bitcoin Core #30595][] introduces a C
+- **Bitcoin Kernel C API introduced:** [Bitcoin Core #30595][news380 kernel] introduced a C
   header that serves as an API for [`bitcoinkernel`][Bitcoin Core #27587],
   enabling external projects to interface with Bitcoin Core’s block validation
   and chainstate logic via a reusable C library. Currently, it is limited to
@@ -807,7 +808,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1699,1895,1974,27587,30595,31375,33629" %}
+{% include linkers/issues.md v=2 issues="1699,1895,1974,27587,33629" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -849,7 +850,7 @@ Friday publication schedule on January 2nd.*
 [mevpool gh]: https://github.com/mevpool/mevpool/blob/0550f5d85e4023ff8ac7da5193973355b855bcc8/mevpool-marketplace.md
 [news 347 ln fees]: /en/newsletters/2025/03/28/#ln-upfront-and-hold-fees-using-burnable-outputs
 [ln fees paper]: https://github.com/JohnLaw2/ln-spam-prevention
-[swiftsync delving post]: https://delvingbitcoin.org/t/ibd-booster-speeding-up-ibd-with-pre-generated-hints-poc/1562/
+[news349 swiftsync]: /en/newsletters/2025/04/11/#swiftsync-speedup-for-initial-block-download
 [swiftsync ruben gh]: https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd
 [swiftsync rust impl]: https://delvingbitcoin.org/t/swiftsync-speeding-up-ibd-with-pre-generated-hints-poc/1562/18
 [news288 lib]: /en/newsletters/2024/02/07/#bitcoin-core-29189
@@ -934,3 +935,6 @@ Friday publication schedule on January 2nd.*
 [28.0 wallet guide]: /en/bitcoin-core-28-wallet-integration-guide/
 [news340 lneas]: /en/newsletters/2025/02/07/#tradeoffs-in-ln-ephemeral-anchor-scripts
 [news341 lneas]: /en/newsletters/2025/02/14/#continued-discussion-about-ephemeral-anchor-scripts-for-ln
+[news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
+[news357 wrapper]: /en/newsletters/2025/06/06/#bitcoin-core-31375
+[news346 dmnd]: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
