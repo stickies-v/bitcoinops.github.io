@@ -322,7 +322,23 @@ TODO: intro / non consensus discussions?...
   algorithm with the spanning-forest linearization algorithm is on-going.
 
 {:#opreturn}
-- **Increasing or removing Bitcoin Core’s OP_RETURN size limit:** ...
+- **Increasing or removing Bitcoin Core’s OP_RETURN size limit:** In April,
+  protocol developers discovered that the OP_RETURN output limits caused a
+  malincentive to embed data in payment outputs under some circumstances. In
+  addition to the observation that the policy’s intended benefits had been eroded
+  by the network’s growth, this prompted a proposal to drop the OP_RETURN mempool
+  policy limits. This proposition kicked off a heated debate about the efficacy
+  of mempool policy, the purpose of Bitcoin, and the responsibility of Bitcoin
+  developers to regulate or refrain from regulating usage of Bitcoin. Bitcoin
+  Core contributors argued that economic incentives made it unlikely that
+  OP_RETURN outputs would see drastically more use and considered the change to be
+  fixing the incentive bug. Critics interpreted the removal of the limits as an
+  endorsement of data embedding, but also agreed that it is economically
+  unattractive to be used that way. Eventually, the Bitcoin Core 30.0 release
+  shipped an updated policy to allow multiple OP_RETURN outputs and remove the
+  limit on size for OP_RETURN output scripts. After the release, several soft
+  fork proposals have been put forth, proposing to curb data embedding at the
+  consensus level.
 
 ## June
 
