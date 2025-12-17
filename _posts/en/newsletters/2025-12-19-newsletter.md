@@ -428,7 +428,20 @@ powerful, to the significantly confiscatory.
 - **Utreexo draft BIPs:** ...
 
 {:#minfeerate}
-- **Lowering the minimum relay feerate:** ...
+- **Lowering the minimum relay feerate:** After lowering the minimum
+  transaction relay feerate had been [discussed several times][news340 lowering
+  feerates] in the past years, late in June, some miners suddenly started
+  including transactions paying less than the default minimum relay feerate of
+  1 s/vB in their blocks. By the end of July, [85% of the
+  hashrate][mononautical 85] had adopted lower minimum feerates and low feerate
+  transactions were organically (albeit unreliably) propagating on the network
+  due to node operators manually configuring lower limits. By mid August, [over
+  30% of confirmed transactions][mononautical 32] paid feerates lower than 1
+  s/vB. Bitcoin protocol developers observed that the high rate of non-standard
+  transactions was causing increased latency for block propagation and
+  [proposed][news366 lower feerate] adjusting the default minimum relay
+  feerate. The Bitcoin Core 29.1 release lowered the default minimum relay
+  feerate to 0.1 s/vB in early September.
 
 {:#templatesharing}
 - **Peer block template sharing:** ...
@@ -860,3 +873,7 @@ Friday publication schedule on January 2nd.*
 [Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
 [eclipse attack]: /en/topics/eclipse-attacks/
 [Antoine post]: /en/newsletters/2025/11/21/#modeling-stale-rates-by-propagation-delay-and-mining-centralization
+[news340 lowering feerates]: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
+[mononautical 85]: https://x.com/mononautical/status/1949452588992414140
+[mononautical 32]: https://x.com/mononautical/status/1958559008698085551
+[news366 propose lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
