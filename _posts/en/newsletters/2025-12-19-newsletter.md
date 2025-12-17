@@ -876,4 +876,4 @@ Friday publication schedule on January 2nd.*
 [news340 lowering feerates]: /en/newsletters/2025/02/07/#discussion-about-lowering-the-minimum-transaction-relay-feerate
 [mononautical 85]: https://x.com/mononautical/status/1949452588992414140
 [mononautical 32]: https://x.com/mononautical/status/1958559008698085551
-[news366 propose lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
+[news366 lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
