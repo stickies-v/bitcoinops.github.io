@@ -456,20 +456,22 @@ powerful, to the significantly confiscatory.
   [Simplicity][topic simplicity], Russel O'Connor made three posts to
   Delving Bitcoin to discuss the [philosophy and the design][simplicity 370] behind the
   language:
-  - [Part I][simplicity I post]: It examines the three major forms of composition
+
+  * *[Part I][simplicity I post]* examines the three major forms of composition
     for transforming basic operations into complex ones.
-  - [Part II][simplicity II post]: It dives into Simplicity’s type system
+
+  * *[Part II][simplicity II post]* dives into Simplicity’s type system
     combinators, and basic expressions.
-  - [Part III][simplicity III post]: It explains how to build logical operations
+
+  * *[Part III][simplicity III post]* explains how to build logical operations
     starting from bits up to cryptographic operations using just computational
     Simplicity combinators.
 
   Since September, two more posts have been published to Delving Bitcoin,
-  [Part IV][simplicity IV post], discussing about side effects, and
+  [Part IV][simplicity IV post], discussing side effects, and
   [Part V][simplicity V post], dealing with programs and addresses.
 
 {:#eclipseattacks}
-
 - **Partitioning and eclipse attacks using BGP interception:** Cedarctic
   [posted][Cedarctic post] to Delving Bitcoin about flaws in Border Gateway
   Protocol (BGP) to prevent full nodes from being able to connect to peers,
