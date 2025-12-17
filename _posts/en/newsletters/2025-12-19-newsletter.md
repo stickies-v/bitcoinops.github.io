@@ -296,41 +296,38 @@ TODO: intro / non consensus discussions?...
 ## June
 
 {:#selfishmining}
-- **Calculating the selfish mining danger threshold:** Antoine Poinsot
-  [posted][selfish miner post] to Delving Bitcoin an expansion of the math from
-  the 2013 [paper][selfish miner paper] that gave the [selfish mining
-  attack][topic selfish mining] its name. Poinsot focused on reproducing one of
-  the conclusions of the paper, proving that a dishonest miner controlling 33%
-  of the total network hashrate, with no additional advantages, can become
-  marginally more profitable on a long term basis than the miners controlling
-  67% of it.
+- **Calculating the selfish mining danger threshold:** Antoine Poinsot provided
+  an [in-depth explaination][news358 selfish miner] of the math behind the
+  [selfish mining attack][topic selfish mining], based on the 2013
+  [paper][selfish miner paper] that gave this exploit its name.
+  Poinsot focused on reproducing one of the conclusions of the paper, proving that a dishonest miner controlling 33% of the total network hashrate can become marginally more profitable than the miners controlling 67% of it, by selectively delaying the announcement of some of the new blocks it finds.
 
 {:#fingerprinting}
-- **Fingerprinting nodes using addr messages:** Daniela Brozzoni
-  [posted][fingerprinting post] to Delving Bitcoin about research she conducted,
-  together with developer Naiyoma, into identifying the same node on multiple
-  networks using the `addr` messages, which are sent by the nodes, through the
-  P2P protocol, to advertise other potential peers. Brozzoni and Naiyoma were
-  able to fingerprint individual nodes using details from their specific address
-  messages, allowing them to identify the same node running on multiple networks
-  (such as IPv4 and [Tor][topic anonymity networks]). Researchers suggested two
-  possible mitigations, either removing timestamps from address messages or, if
-  the timestamps are kept, randomizing them slightly to make them less specific
-  to particular nodes.
+- **Fingerprinting nodes using addr messages:** Developers Daniela Brozzoni and Naiyoma
+  presente the [results][news360 fingerprinting] of their research, which focused on
+  identifying the same node on multiple networks using the `addr` messages, which are
+  sent by the nodes, through the P2P protocol, to advertise other potential peers.
+  Brozzoni and Naiyoma were able to fingerprint individual nodes using details
+  from their specific address messages, allowing them to identify the same node
+  running on multiple networks (such as IPv4 and [Tor][topic anonymity networks]).
+  Researchers suggested two possible mitigations, either totally removing timestamps
+  from address messages or randomizing them slightly to make them less specific to
+  particular nodes.
 
 {:#garbledlocks}
-- **Garbled locks:** Robin Linus [posted][bitvm3 post] to Delving Bitcoin to
-  announce a significant reduction in the amount of onchain space required by
-  [BitVM][topic acc]-style contracts. Based on an [idea][delbrag rubin] by
-  Jeremy Rubin, the new approach leverages [Garbled Circuits][garbled circuits
-  wiki], a cryptographic primitive that makes onchain SNARK verification a
-  thousand times more efficient than the BitVM2 implementation, at the cost of
-  requiring a multi-terabyte offchain setup.
+- **Garbled locks:** In June, Robin Linus presented [a proposal][news359 bitvm3]
+  for improving [BitVM][topic acc]-style contracts, based on an [idea][delbrag rubin]
+  by Jeremy Rubin.
+  The new approach leverages [garbled circuits][garbled circuits wiki],
+  a cryptographic primitive that makes onchain SNARK verification a thousand times more
+  efficient than the BitVM2 implementation, promising a significant reduction in
+  the amount of onchain space required. Hoever, it comes at the cost of requiring a
+  multi-terabyte offchain setup.
 
-  On the same topic, Liam Eagen [posted][eagen ml] to the Bitcoin-Dev mailing
-  list about a [paper][eagen paper] he has written about a new mechanism for
-  creating [accountable computing contracts][topic acc] based on Garbled
-  Circuits, called Glock (Garbled Locks). While the approach is similar, Eagen's
+  Later, in August, Liam Eagen [posted][news369 eagen] to the Bitcoin-Dev mailing
+  list about his research [paper][eagen paper] a new mechanism for
+  creating [accountable computing contracts][topic acc] based on garbled
+  circuits, called Glock (garbled locks). While the approach is similar, Eagen's
   research is independent from Linus'. According to Eagen, Glock allows for a
   550x reduction of onchain data compared to BitVM2.
 
@@ -771,13 +768,13 @@ Friday publication schedule on January 2nd.*
 [erlay fanout amount]: https://delvingbitcoin.org/t/erlay-find-acceptable-target-number-of-peers-to-fanout-to/1420
 [erlay transaction received]: https://delvingbitcoin.org/t/erlay-define-fanout-rate-based-on-the-transaction-reception-method/1422
 [erlay candidate peers]: https://delvingbitcoin.org/t/erlay-select-fanout-candidates-at-relay-time-instead-of-at-relay-scheduling-time/1418
-[selfish miner post]: https://delvingbitcoin.org/t/where-does-the-33-33-threshold-for-selfish-mining-come-from/1757
+[news358 selfish miner]: /en/newsletters/2025/06/13/#calculating-the-selfish-mining-danger-threshold
 [selfish miner paper]: https://arxiv.org/pdf/1311.0243
-[fingerprinting post]: https://delvingbitcoin.org/t/fingerprinting-nodes-via-addr-requests/1786
-[bitvm3 post]: https://delvingbitcoin.org/t/garbled-circuits-and-bitvm3/1773
+[news360 fingerprinting]: /en/newsletters/2025/06/27/#fingerprinting-nodes-using-addr-messages
+[news359 bitvm3]: /en/newsletters/2025/06/20/#improvements-to-bitvm-style-contracts
 [delbrag rubin]: https://rubin.io/bitcoin/2025/04/04/delbrag/
 [garbled circuits wiki]: https://en.wikipedia.org/wiki/Garbled_circuit
-[eagen ml]: https://mailing-list.bitcoindevs.xyz/bitcoindev/Aq_-LHZtVdSN5nODCryicX2u_X1yAQYurf9UDZXDILq6s4grUOYienc4HH2xFnAohA69I_BzgRCSKdW9OSVlSU9d1HYZLrK7MS_7wdNsLmo=@protonmail.com/
+[news369 eagen]: /en/newsletters/2025/08/29/#garbled-locks-for-accountable-computing-contracts
 [eagen paper]: https://eprint.iacr.org/2025/1485
 [news351 dahlias]: /en/newsletters/2025/04/25/#interactive-aggregate-signatures-compatible-with-secp256k1
 [dahlias paper]: https://eprint.iacr.org/2025/692.pdf
