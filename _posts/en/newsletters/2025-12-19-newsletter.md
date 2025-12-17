@@ -21,7 +21,7 @@ excerpt: >
 * January
   * [Updated ChillDKG draft](#chilldkg)
   * [Offchain DLCs](#offchaindlcs)
-  * [Stats on compact block reconstruction](#compactblockstats)
+  * [Compact block reconstructions](#compactblockstats)
 * February
   * [Erlay update](#erlay)
   * [LN ephemeral anchor scripts](#lneas)
@@ -88,7 +88,26 @@ excerpt: >
   offchain DLCs which required interaction at each roll of the contract.
 
 {:#compactblockstats}
-- **Stats on compact block reconstruction:** ...
+- **Compact block reconstructions:** January also saw the first of several items
+  in 2025 that revisited [previous research][news315 compact blocks] into how
+  effectively Bitcoin nodes reconstruct blocks using [compact block relay][topic
+  compact block relay] (BIP152), updating previous measurements and exploring
+  potential refinements. Updated statistics [published in January][news339
+  compact blocks] showed that compact blocks continued to reconstruct
+  successfully at high rates, while also identifying that during full-mempool
+  scenarios, nodes more frequently needed to request missing transactions, in
+  this case, orphan transactions.
+
+  Later in the year, analysis examined whether [pursuing compact block
+  prefilling strategies][news365 compact blocks] could further improve
+  reconstruction success. Testing suggested that selectively prefilling
+  transactions that were more likely to be missing from peers’ mempools could
+  reduce fallback requests with only modest bandwidth tradeoffs. Follow-up
+  research added these additional measurements and updated [real-world
+  reconstruction measurements][news382 compact blocks] before and after changes
+  to the [monitoring nodes' minimum relay feerates](#minfeerate). The author
+  also [posted][news368 monitoring] about the architecture behind his monitoring
+  project.
 
 ## February
 
@@ -879,3 +898,8 @@ Friday publication schedule on January 2nd.*
 [mononautical 85]: https://x.com/mononautical/status/1949452588992414140
 [mononautical 32]: https://x.com/mononautical/status/1958559008698085551
 [news366 lower feerate]: /en/newsletters/2025/08/08/#continued-discussion-about-lowering-the-minimum-relay-feerate
+[news315 compact blocks]: /en/newsletters/2024/08/09/#statistics-on-compact-block-reconstruction
+[news339 compact blocks]: /en/newsletters/2025/01/31/#updated-stats-on-compact-block-reconstruction
+[news365 compact blocks]: /en/newsletters/2025/08/01/#testing-compact-block-prefilling
+[news382 compact blocks]: /en/newsletters/2025/11/28/#stats-on-compact-block-reconstructions-updates
+[news368 monitoring]: /en/newsletters/2025/08/22/#peer-observer-tooling-and-call-to-action
