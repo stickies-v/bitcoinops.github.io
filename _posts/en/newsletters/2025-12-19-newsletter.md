@@ -480,7 +480,14 @@ powerful, to the significantly confiscatory.
 ## July
 
 {:#ccdelegation}
-- **Chain code delegation:** ...
+- **Chain code delegation:** Jurvis Tan [posted][jt delegation] about his work
+  with Jesse Posner on a method (now called [Chain Code Delegation][BIPs
+  #2004]/BIP89) for splitting the extended private key of a partially trusted
+  collaborative custody provider such that the provider cannot reconstruct the
+  customer's full wallet. The method can be used either blinded (for complete
+  privacy while still leveraging the provider's key security) or non-blinded
+  (allowing the provider to enforce policy at the cost of revealing the
+  specific transactions being signed to the provider).
 
 ## August
 
@@ -832,7 +839,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1699,1895,1974,27587,33629" %}
+{% include linkers/issues.md v=2 issues="1699,1895,1974,2004,27587,33629" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -971,3 +978,4 @@ Friday publication schedule on January 2nd.*
 [ok random]: /en/newsletters/2025/02/07/#emulating-op-rand
 [rl random]: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
 [dh random]: /en/newsletters/2025/02/14/#asked
+[jt delegation]: /en/newsletters/2025/07/25/#chain-code-withholding-for-multisig-scripts
