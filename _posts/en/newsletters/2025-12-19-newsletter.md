@@ -349,14 +349,15 @@ so there was no practical chain-split risk from the disclosure.
   potential mitigation strategies.
 
   [BIP360][] was [updated][news bip360 update] and received its BIP
-  number. The updated proposal is now referred to as P2TRH (pay to taproot
-  hash) instead of the earlier name P2QRH (pay to quantum resistant hash),
-  reflecting its reduced scope and increased generality. This proposal has
+  number. This proposal has
   garnered support both as a first step toward quantum hardening
   Bitcoin and an optimization for taproot use cases that do not require an
   internal key. [Research][news365 quantum taproot] later in the year confirmed
   the security of these taproot commitments against manipulation by quantum
-  computers.
+  computers. In December, BIP360 was [renamed][gh bip360rename] to
+  Pay-to-Tapscript-Hash (P2TSH) instead of the earlier name P2QRH
+  (Pay-to-Quantum-Resistant-Hash), reflecting a reduced scope and
+  increased generality.
 
   Jesse Posner [highlighted existing research][news364 quantum primatives] that
   indicates existing Bitcoin primitives like HD wallets, [silent
@@ -1278,3 +1279,4 @@ Friday publication schedule on January 2nd.*
 [news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
 [news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
 [news 338]: /en/newsletters/2025/01/24/#bitcoin-core-31397
+[gh bip360rename]: https://github.com/bitcoin/bips/pull/1670#discussion_r2594039880
