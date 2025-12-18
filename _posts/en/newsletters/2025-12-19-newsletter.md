@@ -842,28 +842,28 @@ which expanded from solo mining to pooled mining.
 - **Splicing:** In December, [LDK 0.2][] was released with experimental
   [splicing][topic splicing] support, making the feature available across three
   major Lightning implementations: LDK, Eclair, and Core Lightning. Splicing
-  allows nodes to add or remove funds from a channel without closing it. 
+  allows nodes to add or remove funds from a channel without closing it.
 
-The year saw significant progress: Eclair added [support for splicing on public
-channels][news340 eclairsplice] in February and [splicing in simple taproot
-channels][news368 eclairtaproot] in August. Meanwhile, Core Lightning
-[finalized][news355 clnsplice] interoperability with Eclair in May and shipped
-it in [Core Lightning 25.05][news359 cln2505]. 
+  The year saw significant progress: Eclair added [support for splicing on
+  public channels][news340 eclairsplice] in February and [splicing in simple
+  taproot channels][news368 eclairtaproot] in August. Meanwhile, Core Lightning
+  [finalized][news355 clnsplice] interoperability with Eclair in May and shipped
+  it in [Core Lightning 25.05][news359 cln2505].
 
-Throughout the year, all the pieces required for the LDK implementation were
-added, including [splice-out support][news369 ldksplice] in August,
-[integrating][news370 ldkquiesce] splicing with the quiescence protocol in
-September, and shipping numerous additional refinements before the 0.2 release. 
+  Throughout the year, all the pieces required for the LDK implementation were
+  added, including [splice-out support][news369 ldksplice] in August,
+  [integrating][news370 ldkquiesce] splicing with the quiescence protocol in
+  September, and shipping numerous additional refinements before the 0.2 release.
 
-The implementation teams also coordinated on specification details, such as
-increasing the delay before marking a channel as closed to allow for splice
-propagation (raised from 12 to [72 blocks][news359 eclairdelay] per [BOLTs
-#1270][]) and [reconnection logic][news381 clnreconnect] for synchronized splice
-state per [BOLTs #1289][]. 
+  The implementation teams also coordinated on specification details, such as
+  increasing the delay before marking a channel as closed to allow for splice
+  propagation (raised from 12 to [72 blocks][news359 eclairdelay] per [BOLTs
+  #1270][]) and [reconnection logic][news381 clnreconnect] for synchronized
+  splice state per [BOLTs #1289][].
 
-However, the main [splicing specification][bolts #1160] remains unmerged as of
-the end of the year, with updates still expected and cross-compatibility issues
-being resolved.
+  However, the main [splicing specification][bolts #1160] remains unmerged as of
+  the end of the year, with updates still expected and cross-compatibility
+  issues being resolved.
 
 <div markdown="1" class="callout" id="optech">
 
