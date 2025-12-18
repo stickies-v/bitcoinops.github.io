@@ -261,7 +261,7 @@ so there was no practical chain-split risk from the disclosure.
 
 {:#forkingguide}
 - **Bitcoin Forking Guide:** In February, Anthony Towns posted
-  to Delving  Bitcoin [a guide][news344 fork guide] on how to build community
+  to Delving Bitcoin [a guide][news344 fork guide] on how to build community
   consensus for changes to Bitcoin’s consensus rules. According to Towns, the process
   of establishing consensus can be divided in four steps, namely
   [research and development][fork guide red], [power user exploration][fork guide pue],
@@ -339,7 +339,7 @@ so there was no practical chain-split risk from the disclosure.
 
 FIXME:bitschmidty intro / non-consensus coverage
 
-{:quantumforks}
+{:#quantumforks}
 - **Quantum mitigation consensus proposals**: With the increase in attention
   on the potential for a future quantum computer to weaken or break the
   Elliptic Curve Discrete Logarithm (ECDL) hardness assumption that Bitcoin
@@ -448,14 +448,14 @@ FIXME:bitschmidty intro / non-consensus coverage
 
 {:#selfishmining}
 - **Calculating the selfish mining danger threshold:** Antoine Poinsot provided
-  an [in-depth explaination][news358 selfish miner] of the math behind the
+  an [in-depth explanation][news358 selfish miner] of the math behind the
   [selfish mining attack][topic selfish mining], based on the 2013
   [paper][selfish miner paper] that gave this exploit its name.
   Poinsot focused on reproducing one of the conclusions of the paper, proving that a dishonest miner controlling 33% of the total network hashrate can become marginally more profitable than the miners controlling 67% of it, by selectively delaying the announcement of some of the new blocks it finds.
 
 {:#fingerprinting}
 - **Fingerprinting nodes using addr messages:** Developers Daniela Brozzoni and Naiyoma
-  presente the [results][news360 fingerprinting] of their research, which focused on
+  presented the [results][news360 fingerprinting] of their research, which focused on
   identifying the same node on multiple networks using the `addr` messages, which are
   sent by the nodes, through the P2P protocol, to advertise other potential peers.
   Brozzoni and Naiyoma were able to fingerprint individual nodes using details
@@ -472,7 +472,7 @@ FIXME:bitschmidty intro / non-consensus coverage
   The new approach leverages [garbled circuits][garbled circuits wiki],
   a cryptographic primitive that makes onchain SNARK verification a thousand times more
   efficient than the BitVM2 implementation, promising a significant reduction in
-  the amount of onchain space required. Hoever, it comes at the cost of requiring a
+  the amount of onchain space required. However, it comes at the cost of requiring a
   multi-terabyte offchain setup.
 
   Later, in August, Liam Eagen [posted][news369 eagen] to the Bitcoin-Dev mailing
@@ -500,7 +500,7 @@ powerful, to the significantly confiscatory.
   (signatures that do not commit to spending a specific UTXO), and
   pre-commitment to spending a UTXO to a specific next transaction (sometimes
   called an equality covenant). If activated, they would enable
-  LN-Symmetry][ctv csfs symmetry], [simple CTV vaults][ctv vaults], [reduce DLC
+  [LN-Symmetry][ctv csfs symmetry], [simple CTV vaults][ctv vaults], [reduce DLC
   signature requirements][ctv dlcs], [reduce interactivity for Arks][ctv
   csfs arks], [simplify PTLCs][ctv csfs ptlcs], and more. One difference
   between these proposals is that `OP_TEMPLATEHASH` cannot be used in the
@@ -530,7 +530,7 @@ powerful, to the significantly confiscatory.
   of reevaluating such a [temporary soft fork][topic transitory soft forks] to avoid a chain split every time
   it expires makes such temporary soft forks a hard sell.
 
-{:opcodes}
+{:#opcodes}
 - **Opcode proposals:** In addition to the grouped changes discussed above,
   there were a number of other Script opcodes proposed or refined in 2025.
 
@@ -560,7 +560,7 @@ powerful, to the significantly confiscatory.
   and 64-bit arithmetic (or similar opcodes) to enable functionality similar
   to CCV.
 
-{:scriptrestoration}
+{:#scriptrestoration}
 - **Script Restoration:** A series of 4 BIPs were [posted][gsr bips] for the
   Script Restoration project. The Script changes and opcodes proposed in these
   4 BIPs would enable all of the functionality proposed in the above opcode
@@ -825,16 +825,16 @@ which expanded from solo mining to pooled mining.
   Antoine Poinsot [posted][Antoine post] to Delving Bitcoin about modeling stale
   block rates and how block propagation time affects a miner's revenue as a
   function of its hashrate. In the post he setup a base-case scenario which
-  miners act realistically (default Bitcoin Core). This lead to a revenue
+  miners act realistically (default Bitcoin Core). This led to a revenue
   proportional to their share of hashrate. He then outlines two situations in
   which a block goes stale. The situations were either another miner found a
   block before this miner or another miner found a block after this miner.
-  Poinsot pointed out that between these two situations a block is more likley
+  Poinsot pointed out that between these two situations a block is more likely
   to become stale in the first one, he suggests that miners prefer to hear about
   others' blocks faster than publishing their own. Later in the post he computes
   by exactly how much does the probability increase and found that if a mining
   operation with 5EH/s can expect a revenue of $91M and if blocks took 10
-  seconds to propogate the revenue would increase by $100k.
+  seconds to propagate the revenue would increase by $100k.
 
 {:#bip3}
 - **BIP3 and the BIP process:** In 2025, work on the Updated BIP Process
@@ -1194,7 +1194,7 @@ Friday publication schedule on January 2nd.*
 [news336 reserve]: /en/newsletters/2025/01/10/#investigating-mining-pool-behavior-before-fixing-a-bitcoin-core-bug
 [news342 vbytes]: /en/newsletters/2025/02/21/#bitcoin-core-31384
 [news340 htlcbug]: /en/newsletters/2025/02/07/#channel-force-closure-vulnerability-in-ldk
-[news340 htlcfix]: en/newsletters/2025/02/07/#ldk-3556
+[news340 htlcfix]: /en/newsletters/2025/02/07/#ldk-3556
 [news339 ldk]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
 [news339 cycling]: /en/newsletters/2025/01/31/#replacement-cycling-attacks-with-miner-exploitation
 [news346 bolts]: /en/newsletters/2025/03/21/#bolts-1233
@@ -1204,7 +1204,7 @@ Friday publication schedule on January 2nd.*
 [news354 32bit]: /en/newsletters/2025/05/16/#vulnerability-disclosure-affecting-old-versions-of-bitcoin-core
 [news364 lnd]: /en/newsletters/2025/07/25/#lnd-gossip-filter-dos-vulnerability
 [news319 lnd]: /en/newsletters/2024/09/06/#lnd-9009
-[news159 32bit]: en/newsletters/2021/07/28/#bitcoin-core-22387
+[news159 32bit]: /en/newsletters/2021/07/28/#bitcoin-core-22387
 [news314 32bit]: /en/newsletters/2024/08/02/#remote-crash-by-sending-excessive-addr-messages
 [news373 eclair]: /en/newsletters/2025/09/26/#eclair-vulnerability
 [news378 four]: /en/newsletters/2025/10/31/#disclosure-of-four-low-severity-vulnerabilities-in-bitcoin-core
