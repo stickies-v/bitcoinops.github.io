@@ -73,11 +73,11 @@ excerpt: >
 ## January
 
 {:#chilldkg}
-- **Updated ChillDKG draft:** Tim Ruffing and Jonas Nick updated their work on
-  a distributed key generation protocol (DKG) for use with the [FROST][news
-  frost bip] [threshold signature][topic threshold signature] scheme. ChillDKG
-  aims to provide similar recoverability features to existing descriptor
-  wallets.
+- **Updated ChillDKG draft:** Tim Ruffing and Jonas Nick
+  [updated][news335 chilldkg] their work on a distributed key generation
+  protocol (DKG) for use with the FROST [threshold signature][topic
+  threshold signature] scheme. ChillDKG aims to provide similar
+  recoverability features to existing descriptor wallets.
 
 {:#offchaindlcs}
 - **Offchain DLCs:** Developer Conduition [posted about][news offchain dlc] a
@@ -1182,7 +1182,7 @@ Friday publication schedule on January 2nd.*
 [news365 quantum taproot]: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
 [news357 quantum report]: /en/newsletters/2025/06/06/#quantum-computing-report
 [news qr agg]: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
-[news frost bip]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
+[news335 chilldkg]: /en/newsletters/2025/01/03/#updated-chilldkg-draft
 [news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
 [news dlc channels]: /en/newsletters/2023/07/19/#wallet-10101-beta-testing-pooling-funds-between-ln-and-dlcs
 [Cedarctic post]: /en/newsletters/2025/09/19/#partitioning-and-eclipse-attacks-using-bgp-interception
