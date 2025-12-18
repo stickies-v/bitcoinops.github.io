@@ -295,7 +295,7 @@ so there was no practical chain-split risk from the disclosure.
   Lightning Network protocol that allows an attacker to costlessly prevent other nodes
   from using their funds.
   The proposal summarizes a [paper][ln fees paper] he has written about the possibility
-  for Lighting nodes to charge two additional types of fees for forwarding payments,
+  for Lightning nodes to charge two additional types of fees for forwarding payments,
   an upfront fee and a hold fee. The former would be paid by
   the ultimate spender to compensate forwarding nodes for temporarily using an
   [HTLC][topic htlc] slot, while the latter would be paid by any node that delays
@@ -312,7 +312,7 @@ so there was no practical chain-split risk from the disclosure.
 
   The speedup is achieved during IBD by only adding coins to the UTXO set when
   they will still be in the UTXO set at the end of IBD. This knowledge of the
-  final UTXO set state stated is compactly encoded in a minimally trusted,
+  final UTXO set state is compactly encoded in a minimally trusted,
   pre-generated hints file. In addition to minimizing overhead on chainstate
   operations, SwiftSync enables further performance improvements by allowing
   parallel block validation.
@@ -483,7 +483,7 @@ so there was no practical chain-split risk from the disclosure.
   multi-terabyte offchain setup.
 
   Later, in August, Liam Eagen [posted][news369 eagen] to the Bitcoin-Dev mailing
-  list about his research [paper][eagen paper] a new mechanism for
+  list about his research [paper][eagen paper] describing a new mechanism for
   creating [accountable computing contracts][topic acc] based on garbled
   circuits, called Glock (garbled locks). While the approach is similar, Eagen's
   research is independent from Linus'. According to Eagen, Glock allows for a
@@ -663,7 +663,7 @@ powerful, to the significantly confiscatory.
 
 {:#simplicity}
 - **Details about the design of Simplicity:** After the release of
-  [Simplicity][topic simplicity] on the Liquid Network, Russel O'Connor made three
+  [Simplicity][topic simplicity] on the Liquid Network, Russell O'Connor made three
   posts to Delving Bitcoin to discuss the [philosophy and the design][simplicity 370]
   behind the language:
 
@@ -839,7 +839,7 @@ which expanded from solo mining to pooled mining.
   [analysis][openssl vs libsecp256k1] on the performance of ECDSA signature
   validation between OpenSSL and libsecp256k1. Since 2015, Bitcoin Core has used
   libsecp256k1 over OpenSSL. He wanted to be certain that doing so was the right
-  choice and not a wasted effort. Falbesoner found was that over the years,
+  choice and not a wasted effort. Falbesoner found that over the years,
   libsecp256k1 had improved significantly, whereas OpenSSL had remained the
   same. He also concluded that outside the Bitcoin ecosystem, the secp256k1
   curve is not that relevant, so it is not justified for OpenSSL to put too many
