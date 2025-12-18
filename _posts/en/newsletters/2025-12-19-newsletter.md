@@ -92,11 +92,11 @@ excerpt: >
   in 2025 that revisited [previous research][news315 compact blocks] into how
   effectively Bitcoin nodes reconstruct blocks using [compact block relay][topic
   compact block relay] (BIP152), updating previous measurements and exploring
-  potential refinements. Updated statistics [published in January][news339
-  compact blocks] showed that compact blocks continued to reconstruct
-  successfully at high rates, while also identifying that during full-mempool
-  scenarios, nodes more frequently needed to request missing transactions, in
-  this case, orphan transactions.
+  potential refinements. Updated statistics [published in
+  January][news339 compact blocks] showed that when mempools are full,
+  nodes more frequently need to request missing transactions. Poor
+  orphan resolution was identified as a possible cause, with [some
+  improvements][news 338] already made.
 
   Later in the year, analysis examined whether [pursuing compact block
   prefilling strategies][news365 compact blocks] could further improve
@@ -1276,3 +1276,4 @@ Friday publication schedule on January 2nd.*
 [bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
 [news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
 [news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
+[news 338]: /en/newsletters/2025/01/24/#bitcoin-core-31397
