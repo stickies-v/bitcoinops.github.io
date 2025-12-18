@@ -583,7 +583,23 @@ powerful, to the significantly confiscatory.
 ## August
 
 {:#utreexo}
-- **Utreexo draft BIPs:** ...
+- **Utreexo draft BIPs:** Calvin Kim, Tadge Dryja and Davidson Souza co-authored
+  [three draft BIPs][news366 utreexo] about a new alternative to the UTXO set, called
+  [Utreexo][topic utreexo], for nodes to obtain and verify information about UTXOs
+  being spent in a transaction. The proposal would make use of a merkle tree to
+  accumulate references to every UTXO allowing nodes to avoid storing the outputs.
+
+  Since August, the proposal has received some feedback and the BIPs have been assigned
+  a number:
+
+  * *[BIP181][bip181 utreexo]*: Describes the Utreexo accumulator and its operations.
+
+  * *[BIP182][bip182 utreexo]*: Defines the rules for validating blocks and
+    transactions using the Utreexo accumulator.
+
+  * *[BIP183][bip183 utreexo]*: Defines the changes needed for nodes to exchange
+    an inclusion proof, a demonstration of the UTXOs being spent.
+
 
 {:#minfeerate}
 - **Lowering the minimum relay feerate:** After lowering the minimum
@@ -1208,3 +1224,7 @@ Friday publication schedule on January 2nd.*
 [bolts #1270]: https://github.com/lightning/bolts/pull/1270
 [bolts #1289]: https://github.com/lightning/bolts/pull/1289
 [bolts #1160]: https://github.com/lightning/bolts/pull/1160
+[news366 utreexo]: /en/newsletters/2025/08/08/#draft-bips-proposed-for-utreexo
+[bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
+[bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
+[bip183 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0183.md
