@@ -246,7 +246,7 @@ excerpt: >
 
 ## Summary 2025: Quantum
 
-TODO: intro / non consensus discussions?...
+FIXME:bitschmidty intro / non-consensus coverage
 
 {:quantumforks}
 - **Quantum mitigation consensus proposals**: With the increase in attention
