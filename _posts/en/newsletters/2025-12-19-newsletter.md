@@ -105,9 +105,10 @@ excerpt: >
   reduce fallback requests with only modest bandwidth tradeoffs. Follow-up
   research added these additional measurements and updated [real-world
   reconstruction measurements][news382 compact blocks] before and after changes
-  to the [monitoring nodes' minimum relay feerates](#minfeerate). The author
-  also [posted][news368 monitoring] about the architecture behind his monitoring
-  project.
+  to the [monitoring nodes' minimum relay feerates](#minfeerate),
+  showing nodes with lower `minrelayfee` to have a higher reconstruction
+  rate. The author also [posted][news368 monitoring] about the
+  architecture behind his monitoring project.
 
 ## February
 
