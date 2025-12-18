@@ -656,9 +656,9 @@ powerful, to the significantly confiscatory.
 
 {:#simplicity}
 - **Details about the design of Simplicity:** After the release of
-  [Simplicity][topic simplicity], Russel O'Connor made three posts to
-  Delving Bitcoin to discuss the [philosophy and the design][simplicity 370] behind the
-  language:
+  [Simplicity][topic simplicity] on the Liquid Network, Russel O'Connor made three
+  posts to Delving Bitcoin to discuss the [philosophy and the design][simplicity 370]
+  behind the language:
 
   * *[Part I][simplicity I post]* examines the three major forms of composition
     for transforming basic operations into complex ones.
