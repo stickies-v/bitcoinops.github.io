@@ -337,19 +337,45 @@ so there was no practical chain-split risk from the disclosure.
 
 ## Summary 2025: Quantum
 
-FIXME:bitschmidty intro / non-consensus coverage
+  With the increased attention on the potential for a future [quantum][topic
+  quantum resistance] computer to weaken or break the Elliptic Curve Discrete
+  Logarithm (ECDL) hardness assumption that Bitcoin relies on to prove the
+  ownership of coins, several conversations and proposals were put forward
+  throughout the year to discuss and mitigate the impact of such a development.
 
-{:#quantumforks}
-- **Quantum mitigation consensus proposals**: With the increase in attention
-  on the potential for a future quantum computer to weaken or break the
-  Elliptic Curve Discrete Logarithm (ECDL) hardness assumption that Bitcoin
-  relies on to prove the ownership of coins, quite a few proposals were put
-  forward to mitigate the impact of such a development.
+  Clara Shikhelman and Anthony Milton [published][news357 quantum report] a
+  paper covering the impacts of quantum computing on Bitcoin and outlining
+  potential mitigation strategies.
+
+  [BIP360][] was [updated][news bip360 update] and received its BIP
+  number. The updated proposal is now referred to as P2TRH (pay to taproot
+  hash) instead of the earlier name P2QRH (pay to quantum resistant hash),
+  reflecting its reduced scope and increased generality. This proposal has
+  garnered support both as a first step toward quantum hardening
+  Bitcoin and an optimization for taproot use cases that do not require an
+  internal key. [Research][news365 quantum taproot] later in the year confirmed
+  the security of these taproot commitments against manipulation by quantum
+  computers.
+
+  Jesse Posner [highlighted existing research][news364 quantum primatives] that
+  indicates existing Bitcoin primitives like HD wallets, [silent
+  payments][topic silent payments], key aggregation, and [threshold
+  signatures][topic threshold signature] could be compatible with some of the
+  commonly referenced quantum-resistant signature algorithms.
+
+  Augustin Cruz [proposed][news qr cruz] a BIP to destroy quantum vulnerable
+  coins. Subsequently, Jameson Lopp [started a discussion][news qr lopp1] of how
+  quantum vulnerable coins should be handled, which led to several ideas ranging
+  from letting the quantum adversary have them to destroying them. Lopp later
+  [proposed][news qr lopp2] a concrete [sequence of soft forks][BIPs #1895] that
+  Bitcoin could implement beginning long before a CRQC is developed to gradually
+  mitigate the threat of a quantum adversary suddenly gaining access to many
+  coins, while allowing holders time to secure their coins.
 
   Two proposals ([1][news qr sha], [2][news qr cr]) were made to enable
   most existing coins to be secured in a way that could be recovered in the
-  event that bitcoin disables quantum vulnerable spends at some later point.
-  Briefly, the theorized sequence of events is 0) Bitcoin holders ensure that
+  event that Bitcoin disables quantum vulnerable spends at some later point.
+  Briefly, the theorized sequence of events is 0) bitcoin holders ensure that
   their current wallets have some hashed secret required for some spend path
   1) a cryptographically relevant quantum computer (CRQC) is shown to be
   eminent, 2) Bitcoin disables elliptic curve signatures, 3) Bitcoin enables a
@@ -358,24 +384,6 @@ FIXME:bitschmidty intro / non-consensus coverage
   on the exact implementation, any address type (including P2TR with any
   script path) could take advantage of these methods.
 
-  Augustin Cruz [proposed][news qr cruz] a [BIP][qr bip destroy] to destroy
-  definitely quantum vulnerable coins. Subsequently, Jameson Lopp [started a
-  discussion][news qr lopp1] of how quantum vulnerable coins should be handled
-  which led to several ideas ranging from letting the quantum adversary have
-  them to destroying them. Lopp later [proposed][news qr lopp2] a concrete
-  sequence of soft forks that Bitcoin could implement beginning long before a
-  CRQC is developed to gradually mitigate the threat of a quantum adversary
-  suddenly gaining access to many coins while allowing holders time to secure
-  their coins.
-
-  [BIP360][BIPs #1895] was [updated][news bip360 update] and received its BIP
-  number. The updated proposal is now referred to as P2TRH (pay to taproot
-  hash) instead of the earlier name P2QRH (pay to quantum resistant hash),
-  reflecting its reduced scope and increased generality. This proposal has
-  garnered widespread support both as a first step toward quantum hardening
-  bitcoin and an optimization for taproot use cases that do not require an
-  internal key.
-
   Developer Conduition demonstrated that [`OP_CAT`][BIP347] can be used to
   implement Winternitz signatures, which provides a quantum resistant
   signature check at a cost of ~2000 vBytes per input. This is less costly
@@ -383,16 +391,15 @@ FIXME:bitschmidty intro / non-consensus coverage
   signatures][lamport].
 
   Matt Corallo started a [discussion][news qr corallo] around the general idea
-  of adding a quantum resistant signature checking opcode to tapscript. Later,
-  Abdelhamid Bakhta [proposed][abdel stark] native STARK verification as one
-  such opcode and Conduition [wrote][conduition sphincs] about their work
-  optimizing SLH-DSA (SPHINCS) quantum resistant signatures as another option.
+  of adding a quantum resistant signature checking opcode to [tapscript][topic
+  tapscript]. Later, Abdelhamid Bakhta [proposed][abdel stark] native STARK
+  verification as one such opcode and Conduition [wrote][conduition sphincs]
+  about their work optimizing SLH-DSA (SPHINCS) quantum resistant signatures as
+  another option. Any quantum resistant signature checking opcode including
+  `OP_CAT` added to tapscript could be combined with [BIP360][] to fully quantum
+  harden Bitcoin outputs.
 
-  Any quantum resistant signature checking opcode including `OP_CAT` added to
-  tapscript could be combined with [BIP360][] to fully quantum harden Bitcoin
-  outputs.
-
-  Tadge Dryja [proposed][news qr agg] one way in which bitcoin could implement
+  Tadge Dryja [proposed][news qr agg] one way in which Bitcoin could implement
   general cross-input signature aggregation which would partially mitigate the
   large size of post-quantum signatures.
 
@@ -1166,12 +1173,14 @@ Friday publication schedule on January 2nd.*
 [news qr lopp1]: /en/newsletters/2025/04/04/#should-vulnerable-bitcoins-be-destroyed
 [news qr lopp2]: /en/newsletters/2025/08/01/#migration-from-quantum-vulnerable-outputs
 [news qr cruz]: /en/newsletters/2025/04/04/#draft-bip-for-destroying-quantum-insecure-bitcoins
-[qr bip destroy]: https://github.com/chucrut/bips/blob/master/bip-xxxxx.md
 [news qr corallo]: /en/newsletters/2025/01/03/#quantum-computer-upgrade-path
 [rubin lamport]: https://gnusha.org/pi/bitcoindev/CAD5xwhgzR8e5r1e4H-5EH2mSsE1V39dd06+TgYniFnXFSBqLxw@mail.gmail.com/
 [lamport]: https://en.wikipedia.org/wiki/Lamport_signature
 [conduition sphincs]: /en/newsletters/2025/12/05/#slh-dsa-sphincs-post-quantum-signature-optimizations
 [abdel stark]: /en/newsletters/2025/11/07/#native-stark-proof-verification-in-bitcoin-script
+[news364 quantum primatives]: /en/newsletters/2025/07/25/#research-indicates-common-bitcoin-primitives-are-compatible-with-quantum-resistant-signature-algorithms
+[news365 quantum taproot]: /en/newsletters/2025/08/01/#security-against-quantum-computers-with-taproot-as-a-commitment-scheme
+[news357 quantum report]: /en/newsletters/2025/06/06/#quantum-computing-report
 [news qr agg]: /en/newsletters/2025/11/07/#post-quantum-signature-aggregation
 [news frost bip]: /en/newsletters/2024/08/09/#proposed-bip-for-scriptless-threshold-signatures
 [news offchain dlc]: /en/newsletters/2025/01/24/#correction-about-offchain-dlcs
