@@ -618,7 +618,22 @@ powerful, to the significantly confiscatory.
   feerate to 0.1 s/vB in early September.
 
 {:#templatesharing}
-- **Peer block template sharing:** ...
+- **Peer block template sharing:** Anthony Towns proposed a
+  [way][news366 templ share] to improve the effectiveness of compact block
+  reconstruction in an environment where peers have divergent mempool policies.
+  The proposal would allow full nodes to send block templates to their peers,
+  which in turn would cache those transactions that would otherwise be rejected by
+  their mempool policies. The provided template contains transaction identifiers
+  encoded in the same format used by [compact block relay][topic compact block relay].
+
+  Later, in August, Towns opened [BIPs #1937][] to formally
+  [discuss the proposal][news368 templ share] for block template sharing.
+  During the discussion, several developers raised concerns about possible issues
+  related to privacy and node fingerprinting. Thus, in October, Towns decided
+  to [move the draft][news376 templ share] to the
+  [Bitcoin Inquisition Numbers and Names Authority][binana repo] (BINANA) repository
+  to address these considerations and to refine the document.
+  The draft was given the code [BIN-2025-0002][bin].
 
 {:#fuzzing}
 - **Differential fuzzing of Bitcoin and LN implementations:** Bruno Garcia
@@ -1049,7 +1064,7 @@ Friday publication schedule on January 2nd.*
 
 {% include snippets/recap-ad.md when="2025-12-23 17:30" %}
 {% include references.md %}
-{% include linkers/issues.md v=2 issues="1699,1895,1974,2004,27587,33629" %}
+{% include linkers/issues.md v=2 issues="1699,1895,1974,2004,27587,33629,1937" %}
 [topics index]: /en/topics/
 [yirs 2018]: /en/newsletters/2018/12/28/
 [yirs 2019]: /en/newsletters/2019/12/28/
@@ -1242,5 +1257,10 @@ Friday publication schedule on January 2nd.*
 [bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
 [bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
 [bip183 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0183.md
+[news366 templ share]: /en/newsletters/2025/08/08/#peer-block-template-sharing-to-mitigate-problems-with-divergent-mempool-policies
+[news368 templ share]: /en/newsletters/2025/08/22/#draft-bip-for-block-template-sharing
+[news376 templ share]: /en/newsletters/2025/10/17/#continued-discussion-of-block-template-sharing
+[binana repo]: https://github.com/bitcoin-inquisition/binana
+[bin]: https://github.com/bitcoin-inquisition/binana/blob/master/2025/BIN-2025-0002.md
 [news369 fuzz]: /en/newsletters/2025/08/29/#update-on-differential-fuzzing-of-bitcoin-and-ln-implementations
 [bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
