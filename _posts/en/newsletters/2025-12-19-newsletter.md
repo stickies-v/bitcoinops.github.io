@@ -51,15 +51,15 @@ excerpt: >
   * [Details about the design of Simplicity](#simplicity)
   * [Partitioning and eclipse attacks using BGP interception](#eclipseattacks)
 * October
-  * [Theoretical limitations on embedding data in the UTXO set](#arbdata)
+  * [Discussions about arbitrary data](#arbdata)
   * [Channel jamming mitigation simulation results and updates](#channeljamming)
 * November
   * [Comparing performance of ECDSA signature validation in OpenSSL vs. libsecp256k1](#secpperformance)
-  * [Multiple discussions about restricting data](#restrictingdata)
   * [Modeling stale rates by propagation delay and mining centralization](#stalerates)
   * [BIP3 and the BIP process](#bip3)
   * [Bitcoin Kernel C API introduced](#kernelapi)
 * December
+  * [Splicing](#lnsplicing)
 * Featured summaries
   * [Vulnerabilities](#vulns)
   * [Quantum](#quantum)
@@ -801,7 +801,15 @@ which expanded from solo mining to pooled mining.
 
 {:#arbdata}
 
-- **Theoretical limitations on embedding data in the UTXO set:** ...
+- **Discussions about arbitrary data:** Conversation in October revisited
+  long-standing questions about embedding arbitrary data in Bitcoin transactions
+  and the limits of using the UTXO set for that purpose. [One analysis][news375
+  arb data] examined the theoretical constraints on storing data in UTXOs, even
+  under a restrictive set of rules for Bitcoin transactions.
+
+  Subsequent [discussions][news379 arb data] through the rest of the year
+  focused on whether consensus restrictions on data-carrying transactions should
+  be considered.
 
 {:#channeljamming}
 
@@ -829,10 +837,6 @@ which expanded from solo mining to pooled mining.
   same. He also concluded that outside the Bitcoin ecosystem, the secp256k1
   curve is not that relevant, so it is not justified for OpenSSL to put too many
   resources into improving it (evident by the results).
-
-{:#restrictingdata}
-
-- **Multiple discussions about restricting data:** ...
 
 {:#stalerates}
 
@@ -883,8 +887,8 @@ which expanded from solo mining to pooled mining.
 
 ## December
 
-{:#splicing}
-- **LN Splicing:** In December, [LDK 0.2][] was released with experimental
+{:#lnsplicing}
+- **Splicing:** In December, [LDK 0.2][] was released with experimental
   [splicing][topic splicing] support, making the feature available across three
   major Lightning implementations: LDK, Eclair, and Core Lightning. Splicing
   allows nodes to add or remove funds from a channel without closing it.
@@ -1020,10 +1024,6 @@ the Bitcoin education, elucidation, and understanding he brought the community.
 We are grateful and wish him well.
 
 </div>
-
-## December
-
-FIXME:bitschmidty
 
 *We thank all of the Bitcoin contributors named above, plus the many
 others whose work was just as important, for another incredible year of
@@ -1264,3 +1264,5 @@ Friday publication schedule on January 2nd.*
 [bin]: https://github.com/bitcoin-inquisition/binana/blob/master/2025/BIN-2025-0002.md
 [news369 fuzz]: /en/newsletters/2025/08/29/#update-on-differential-fuzzing-of-bitcoin-and-ln-implementations
 [bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
+[news375 arb data]: /en/newsletters/2025/10/10/#theoretical-limitations-on-embedding-data-in-the-utxo-set
+[news379 arb data]: /en/newsletters/2025/11/07/#multiple-discussions-about-restricting-data
