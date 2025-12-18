@@ -579,14 +579,16 @@ powerful, to the significantly confiscatory.
 ## July
 
 {:#ccdelegation}
-- **Chain code delegation:** Jurvis Tan [posted][jt delegation] about his work
-  with Jesse Posner on a method (now called [Chain Code Delegation][BIPs
-  #2004]/BIP89) for splitting the extended private key of a partially trusted
-  collaborative custody provider such that the provider cannot reconstruct the
-  customer's full wallet. The method can be used either blinded (for complete
-  privacy while still leveraging the provider's key security) or non-blinded
-  (allowing the provider to enforce policy at the cost of revealing the
-  specific transactions being signed to the provider).
+- **Chain code delegation:** Jurvis Tan [posted][jt delegation] about
+  his work with Jesse Posner on a method (now called [Chain Code
+  Delegation][BIPs #2004]/BIP89) for sharing only half of the BIP32 HD
+  extended key with a partially trusted collaborative custody provider,
+  keeping the chain code part private. This way, the provider cannot
+  reconstruct the customer's full wallet. The method can be used either
+  blinded (for complete privacy while still leveraging the provider's
+  key security) or non-blinded (allowing the provider to enforce policy
+  at the cost of revealing the specific transactions being signed to the
+  provider).
 
 ## August
 
