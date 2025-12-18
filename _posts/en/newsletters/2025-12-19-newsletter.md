@@ -621,7 +621,21 @@ powerful, to the significantly confiscatory.
 - **Peer block template sharing:** ...
 
 {:#fuzzing}
-- **Differential fuzzing of Bitcoin and LN implementations:** ...
+- **Differential fuzzing of Bitcoin and LN implementations:** Bruno Garcia
+  gave an update on the [progress and results][news369 fuzz] obtained by
+  [bitcoinfuzz][], a library to perform fuzz testing on Bitcoin implementations
+  and libraries. By leveraging the library, developers were able to report more
+  than 35 bugs in Bitcoin-related projects, such as btcd, rust-bitcoin,
+  rust-miniscript, LND, and more.
+
+  Garcia also highlighted the importance of differential fuzzing in the ecosystem.
+  Developers were able to report bugs on projects that do not implement fuzzing at
+  all, catch discrepancies between different Bitcoin implementations, and find gaps
+  in the Lightning specifications.
+
+  Finally, Garcia encouraged maintainers to integrate more projects into bitcoinfuzz,
+  expanding the support for differential fuzzing, and provided possible directions
+  for the future developments of the library.
 
 ## September
 
@@ -1228,3 +1242,5 @@ Friday publication schedule on January 2nd.*
 [bip181 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0181.md
 [bip182 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0182.md
 [bip183 utreexo]: https://github.com/utreexo/biptreexo/blob/main/bip-0183.md
+[news369 fuzz]: /en/newsletters/2025/08/29/#update-on-differential-fuzzing-of-bitcoin-and-ln-implementations
+[bitcoinfuzz]: https://github.com/bitcoinfuzz/bitcoinfuzz
