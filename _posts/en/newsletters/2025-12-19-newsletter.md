@@ -144,7 +144,19 @@ excerpt: >
   assumptions.
 
 {:#probpayments}
-- **Probabilistic payments:** ...
+- **Probabilistic payments:** Oleksandr Kurbatov sparked a lively
+  [discussion][delving random] on Delving Bitcoin of methods to produce random
+  outcomes from bitcoin scripts. The [original][ok random] method uses
+  zero-knowledge proofs in a challenger/verifier arrangement and now has a
+  [published proof of concept][random poc]. Other methods were discussed,
+  [including one][waxwing random] which leverages the tree structure of
+  taproot, and a [method][rl random] which scripted the XOR of bits
+  represented by a sequence of different hashing functions to directly produce
+  an unpredictable bitstring. There was [discussion][dh random] of whether
+  such random transaction outcomes could be used to produce probabilistic
+  HTLCs as an alternative to trimmed HTLCs for moving small amounts via LN. At
+  this writing none of the methods have been confirmed suitable for this
+  purpose.
 
 <div markdown="1" class="callout" id="vulns">
 
@@ -953,3 +965,9 @@ Friday publication schedule on January 2nd.*
 [news341 bip3 assigned]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
 [news382 motion to activate bip3]: /en/newsletters/2025/11/28/#motion-to-activate-bip3
 [bip3 feedback addressed]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/8HTeL2_iAQAJ
+[delving random]: https://delvingbitcoin.org/t/emulating-op-rand/1409
+[random poc]: https://github.com/distributed-lab/op_rand
+[waxwing random]: /en/newsletters/2025/02/14/#suggested
+[ok random]: /en/newsletters/2025/02/07/#emulating-op-rand
+[rl random]: /en/newsletters/2025/03/14/#probabilistic-payments-using-different-hash-functions-as-an-xor-function
+[dh random]: /en/newsletters/2025/02/14/#asked
