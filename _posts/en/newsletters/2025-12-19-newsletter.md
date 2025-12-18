@@ -605,7 +605,7 @@ powerful, to the significantly confiscatory.
     transactions using the Utreexo accumulator.
 
   * *[BIP183][bip183 utreexo]*: Defines the changes needed for nodes to exchange
-    an inclusion proof, a demonstration of the UTXOs being spent.
+    an inclusion proof, a confirmation of the UTXOs being spent.
 
 
 {:#minfeerate}
@@ -636,7 +636,7 @@ powerful, to the significantly confiscatory.
   Later, in August, Towns opened [BIPs #1937][] to formally
   [discuss the proposal][news368 templ share] for block template sharing.
   During the discussion, several developers raised concerns about possible issues
-  related to privacy and node fingerprinting. Thus, in October, Towns decided
+  related to privacy and node fingerprinting. In October, Towns decided
   to [move the draft][news376 templ share] to the
   [Bitcoin Inquisition Numbers and Names Authority][binana repo] (BINANA) repository
   to address these considerations and to refine the document.
@@ -645,8 +645,9 @@ powerful, to the significantly confiscatory.
 {:#fuzzing}
 - **Differential fuzzing of Bitcoin and LN implementations:** Bruno Garcia
   gave an update on the [progress and results][news369 fuzz] obtained by
-  [bitcoinfuzz][], a library to perform fuzz testing on Bitcoin implementations
-  and libraries. By leveraging the library, developers were able to report more
+  [bitcoinfuzz][], a library to perform fuzz testing on Bitcoin and Lightning
+  implementations and libraries.
+  By leveraging the library, developers were able to report more
   than 35 bugs in Bitcoin-related projects, such as btcd, rust-bitcoin,
   rust-miniscript, LND, and more.
 
