@@ -621,11 +621,9 @@ powerful, to the significantly confiscatory.
   transactions were organically (albeit unreliably) propagating on the network
   due to node operators manually configuring lower limits. By mid August, [over
   30% of confirmed transactions][mononautical 32] paid feerates lower than 1
-  sats/vB. Bitcoin protocol developers observed that the high rate of non-standard
-  transactions was causing increased latency for block propagation and
-  [proposed][news366 lower feerate] adjusting the default minimum relay
-  feerate. The Bitcoin Core 29.1 release lowered the default minimum relay
-  feerate to 0.1 sats/vB in early September.
+  sats/vB. Bitcoin Core developers [proposed][news366 lower feerate] adjusting the
+  default minimum relay feerate. The Bitcoin Core 29.1 release lowered the
+  default minimum relay feerate to 0.1 s/vB in early September.
 
 {:#templatesharing}
 - **Peer block template sharing:** Anthony Towns proposed a
