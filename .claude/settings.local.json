@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git branch:*)",
+      "Bash(git worktree add:*)",
+      "Bash(git worktree:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(for num in 341 352 377 382)",
+      "Bash(do grep -l \"Newsletter #$num\" /Users/stephanvuylsteke/code/bitcoinops-content/_posts/en/newsletters/2025-*.md)",
+      "Bash(done)",
+      "Bash(git show:*)",
+      "Bash(cat:*)",
+      "Bash(xxd:*)",
+      "Bash(recoverability features to existing descriptor wallets\" which is not\nstated in the source newsletter. Replaced with the actual updates\nmentioned: security vulnerability fix, investigation phase for\nidentifying faulty participants, and easier backup/recovery.\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "WebFetch(domain:eprint.iacr.org)",
+      "WebSearch",
+      "WebFetch(domain:mailing-list.bitcoindevs.xyz)",
+      "WebFetch(domain:arxiv.org)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:rubin.io)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:delvingbitcoin.org)",
+      "WebFetch(domain:groups.google.com)",
+      "WebFetch(domain:bitcoinops.org)"
+    ]
+  }
+}
