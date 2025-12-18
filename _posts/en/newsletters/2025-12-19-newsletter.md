@@ -637,7 +637,19 @@ FIXME:Gustavojfe
   seconds to propogate the revenue would increase by $100k.
 
 {:#bip3}
-- **BIP3 and the BIP process:** ...
+- **BIP3 and the BIP process:** In 2025, work on the Updated BIP Process
+  advanced significantly. BIP3 was [assigned][news341 bip3 assigned] a number in
+  January, published in February, and advanced to Proposed in April. Further
+  review was followed by a few more tweaks, in which SPDX License Expressions
+  were introduced, some Preamble headers were updated, and several clarifications
+  were worked into the proposals. In November, Murch [motioned to
+  activate][news382 motion to activate bip3] the proposal, by requesting that
+  readers review the proposal within another four weeks and comment on whether
+  BIP3 should be activated. A flurry of subsequent review resulted in a few more
+  improvements and the reversion of controversial guidance disallowing the use of
+  LLMs in crafting BIPs. As the year closes out, all review has been addressed,
+  and BIP3 is [seeking rough consensus][bip3 feedback addressed] for activation
+  again.
 
 {:#kernelapi}
 - **Bitcoin Kernel C API introduced:** [Bitcoin Core #30595][news380 kernel] introduced a C
@@ -938,3 +950,6 @@ Friday publication schedule on January 2nd.*
 [news380 kernel]: /en/newsletters/2025/11/14/#bitcoin-core-30595
 [news357 wrapper]: /en/newsletters/2025/06/06/#bitcoin-core-31375
 [news346 dmnd]: /en/newsletters/2025/03/21/#dmnd-launching-pooled-mining
+[news341 bip3 assigned]: /en/newsletters/2025/02/14/#updated-proposal-for-updated-bip-process
+[news382 motion to activate bip3]: /en/newsletters/2025/11/28/#motion-to-activate-bip3
+[bip3 feedback addressed]: https://groups.google.com/g/bitcoindev/c/j4_toD-ofEc/m/8HTeL2_iAQAJ
