@@ -869,7 +869,7 @@ which expanded from solo mining to pooled mining.
 ## December
 
 {:#splicing}
-- **Splicing:** In December, [LDK 0.2][] was released with experimental
+- **LN Splicing:** In December, [LDK 0.2][] was released with experimental
   [splicing][topic splicing] support, making the feature available across three
   major Lightning implementations: LDK, Eclair, and Core Lightning. Splicing
   allows nodes to add or remove funds from a channel without closing it.
